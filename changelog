@@ -1,0 +1,13 @@
+version -0.0.1
+1.updated the json file added heading and sections to it.
+2.acccording to json structure data the main.py export the document.
+version 0.0.2
+1.Added layout structure logic as in template 
+2.Updated the template layout and in script as well
+3.changed the logo of the document in header.
+version 0.0.3
+1.created new file constants.py in main.py by importing them variables.
+version 0.0.4
+1.added xml elements for each tables and borders cells.
+2.changed the logic for content.
+3.changes the json structure maintained indexing for each line.

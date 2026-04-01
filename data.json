@@ -1,0 +1,281 @@
+{
+"template_file": "Pro-Vizi GreenShield Endpoint Reference PA3.docx",
+"output_file": "Pro-Vizi GreenShield Endpoint Reference.docx",
+"title": "Reference API Endpoint",
+"title_page": {
+ "Customer": "Sterling InsurBrokers Ltd",
+ "Project": "Pro-Vizi",
+ "Date": "2026-03-16",
+ "Author(s)": "M Sukesh Reddy",
+ "Reviewer(s)": "Anna Anthony",
+ "Version": "PA3",
+ "Document No": "1"
+},
+"table_of_contents": [
+ "Purpose",
+ "GreenShield Endpoint",
+ "Functions",
+ "General Structure",
+ "Function-Specific Parameters",
+ "Appendix"
+],
+"sections": [
+ {
+  "heading": "Purpose",
+  "paragraphs": [
+   "This is the outline of the of Pro-Vizi provisioning endpoints for the GreenShield platform. By specifying a supported function and providing the necessary data, Pro-Vizi interacts with the GreenShield platform to perform actions without the need for UI interaction or human intervention.",
+   "Here Greenshield values are broken by site functionality."
+  ],
+  "examples": [
+   "Example GreenShield add-single payload",
+   "Example GreenShield add-family payload",
+   "Example GreenShield search-member payload",
+   "Example GreenShield terminate payload"
+  ]
+ },
+ {
+  "heading": "GreenShield Endpoint (EP) Url"
+ },
+ {
+  "heading": "Functions",
+  "paragraphs": [
+   "The GreenShield endpoint (EP) supports the following functions:"
+  ],
+  "table": [
+   ["Function", "Purpose"],
+   ["add-single", "Add a single member to the system (no dependents)"],
+   ["add-family", "Add a single member plus dependents (child/spouse)"],
+   ["search-member", "Search the system for a member and return their information"],
+   ["terminate", "Terminate a member from the system"]
+  ]
+ },
+ {
+  "heading": "General Structure",
+  "paragraphs": [
+   "Each payload requires four common parameters in addition to function-specific information:"
+  ],
+  "table": [
+   ["Parameter", "Data Type", "Function"],
+   ["API-Key", "Text String", "Ideabytes vided Pro-Vizi API key"],
+   ["username", "Text String", "GreenShield account username"],
+   ["password", "Text String", "GreenShield account password"],
+   ["function", "Text String", "Desired website function"]
+  ]
+ },
+ {
+  "heading": "Function-Specific Parameters",
+  "subsections": [
+   {
+    "heading": "add-single",
+    "paragraphs": [
+     "The add-single function takes a member array of JSON object."
+    ],
+    "table": [
+     ["Parameter", "Data Type", "Function"],
+     ["coverage", "JSON Object", "Member coverage information"],
+     ["personal", "JSON Object", "Member personal information"],
+     ["address", "JSON Object", "Member address information"],
+     ["employment", "JSON Object", "Member employment information"],
+     ["banking", "JSON Object", "Member banking information"],
+     ["meta", "JSON Object", "Additional info needed for GreenShield platform interaction"]
+    ]
+   },
+   {
+    "heading": "coverage",
+    "table": [
+     ["Parameter", "Data Type", "Function"],
+     ["overrideCoverage", "Text string", "On/Off coverage override"],
+     ["dentalOption", "Text string", "Dental option string"],
+     ["healthOption", "Text string", "Health option string"],
+     ["enrolmentOption", "Text string", "Enrollment option"],
+     ["familyCategory", "Text string", "Family category"],
+     ["overrideBenefitStartDate", "Text string", "Benefit override start date"],
+     ["overrideReason", "Text string", "Benefit override reason"],
+     ["applicationDate", "Text string", "Application date"],
+     ["ppmpOption", "Text string", "optPPMPYes or optPPMPNo"]
+    ]
+   },
+   {
+    "heading": "personal",
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["firstName", "Text string", "Member first name"],
+     ["middleName", "Text string", "Member middle name"],
+     ["lastName", "Text string", "Member last name"],
+     ["birthDate", "Text string", "Member birth date"],
+     ["gender", "Text string", "Member gender"],
+     ["language", "Text string", "Language selection"]
+    ]
+   },
+   {
+    "heading": "contact",
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["email", "Text string", "Member email"],
+     ["confirmEmail", "Text string", "Member email confirmation"],
+     ["homePhone", "Text string", "Member home phone"],
+     ["homeAreaCode", "Text string", "Home phone area code"],
+     ["officePhone", "Text string", "Office phone"],
+     ["officeAreaCode", "Text string", "Office phone area code"],
+     ["extension", "Text string", "Office extension"]
+    ]
+   },
+   {
+    "heading": "address",
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["line1", "Text string", "Address line 1"],
+     ["line2", "Text string", "Address line 2"],
+     ["line3", "Text string", "Address line 3"],
+     ["city", "Text string", "City"],
+     ["province", "Text string", "Province code"],
+     ["country", "Text string", "Country code"],
+     ["postalCode", "Text string", "Postal code"]
+    ]
+   },
+   {
+    "heading": "employment",
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["division", "Text string", "Division code"],
+     ["hireDate", "Text string", "Hiring date"],
+     ["classCode", "Text string", "Class code"],
+     ["employmentType", "Text string", "Employment type"],
+     ["jobTitle", "Text string", "Job title"],
+     ["incomeRows", "Text string", "Income rows"],
+     ["sectionId", "Text string", "Section ID"],
+     ["currency", "Text string", "Currency code"]
+    ]
+   },
+   {
+    "heading": "banking",
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["bankNumber", "Text string", "Bank number"],
+     ["transitNumber", "Text string", "Transit number"],
+     ["accountNumber", "Text string", "Account number"],
+     ["confirmBankNumber", "Text string", "Confirm bank number"],
+     ["confirmTransitNumber", "Text string", "Confirm transit number"],
+     ["confirmAccountNumber", "Text string", "Confirm account number"]
+    ]
+   },
+   {
+  "heading": "new section 3",
+  "paragraphs": [
+    " enroll a member iontains this information."
+  ],
+  "table": [
+    ["New", "Data", "Func"],
+    ["firstName", "Text string", "Member first name"],
+    ["middleName", "Text string", "Member middle name"]
+  ]
+},
+   {
+    "heading": "meta",
+    "paragraphs": [
+     "Note: Contains additional info expected by the GreenShield platform. Default values are sufficient for all website functionalities."
+    ],
+    "table": [
+     ["Parameter", "Datatype", "Function"],
+     ["save", "Text string", "Default 0"],
+     ["cancelClicked", "Text string", "Default 0"],
+     ["dependentRows", "Text string", "Default 2"],
+     ["toolkitField", "Text string", "Default NA"],
+     ["hiddenLastName", "Text string", "Default NA"],
+     ["hiddenFirstName", "Text string", "Default NA"],
+     ["hiddenBirthDate", "Text string", "Default NA"]
+    ]
+   }
+  ]
+ },
+ {
+  "heading": "enrollment",
+  "paragraphs": [
+    "In addition to a member object, the add-single function requires an enrollment array of JSON objects."
+  ],
+  "table": [
+    ["Parameter", "Datatype", "Function"],
+    ["firstName", "Text string", "Member first name"],
+    ["lastName", "Text string", "Member last name"]
+  ]
+},
+{
+  "heading": "search",
+  "paragraphs": [
+    "Note: The search object is necessary for information cross-verification. To ensure a member is successfully enrolled in the system, a search for the member is performed after provisioning and the member’s certificate information is returned. For all functions, providing the member’s first name in addition to default values is sufficient."
+  ],
+  "table": [
+    ["Parameter", "Datatype", "Function", "Default Value"],
+    ["coverage", "JSON Object", "Same as member object", ""],
+    ["employment", "JSON Object", "Same as member object", ""],
+    ["banking", "JSON Object", "Same as member object", ""],
+    ["meta", "JSON Object", "Same as member object", ""],
+    ["employeeDetails", "JSON Object", "Additional member information", ""],
+    ["classCode", "Text string", "Class code", "NA"],
+    ["divisionCode", "Text string", "Division code", "NA"],
+    ["status", "Text string", "Status code", "null"],
+    ["statusReason", "Text string", "Status reason", "0"],
+    ["sectionId", "Text string", "Section ID", "NA"],
+    ["sortField", "Text string", "Sort field option", "1"],
+    ["sortOrder", "Text string", "Sort order option", "A"],
+    ["currentPage", "Text string", "Current page option", "1"]
+  ]
+},
+{
+  "heading": "form",
+  "paragraphs": [
+    "Note: The GreenShield platform requires a second batch of member information to properly enroll a member in the system. The form object contains this information."
+  ],
+  "table": [
+    ["Parameter", "Datatype", "Function"],
+    ["firstName", "Text string", "Member first name"],
+    ["middleName", "Text string", "Member middle name"],
+    ["lastName", "Text string", "Member last name"],
+    ["birthDate", "Text string", "Birth date"],
+    ["gender", "Text string", "Gender"]
+  ]
+},
+{
+  "heading": "employeeDetails",
+  "table": [
+    ["Parameter", "Datatype", "Function"],
+    ["firstName", "Text string", "Member first name"],
+    ["middleName", "Text string", "Member middle name"],
+    ["lastName", "Text string", "Member last name"],
+    ["birthDate", "Text string", "Member birth date"],
+    ["gender", "Text string", "Member gender: 'M', 'F', 'O' for other"],
+    ["address1", "Text string", "Address line 1"],
+    ["address2", "Text string", "Address line 2"],
+    ["address3", "Text string", "Address line 3"],
+    ["city", "Text string", "Address city"],
+    ["postalCode", "Text string", "Address postal code"],
+    ["provinceCode", "Text string", "Province code, see appendix for options"],
+    ["countryCode", "Text string", "Country code, '1' for Canada"],
+    ["correspondenceLanguage", "Text string", "Correspondence Language, '1' for English"],
+    ["email", "Text string", "Member email"]
+  ]
+},
+{
+  "heading": "new section",
+  "paragraphs": [
+    " enroll a member in the system. The form object contains this information."
+  ],
+  "table": [
+    ["New", "Data", "Func"],
+    ["firstName", "Text string", "Member first name"],
+    ["middleName", "Text string", "Member middle name"]
+  ]
+},
+ {
+  "heading": "Appendix",
+  "paragraphs": [
+   "Example GreenShield add-single payload",
+   "Example GreenShield add-family payload",
+   "Example GreenShield search-member payload",
+   "Example GreenShield terminate payload"
+  ],
+  "image": ""
+ }
+],
+"footer": "Ideabytes Inc. Suite 580, 1000 Innovation Drive, Kanata, Ottawa, ON K2K 3E7"
+}

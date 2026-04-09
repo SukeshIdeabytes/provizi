@@ -18,7 +18,7 @@ BORDER_SIDES = ("top", "start", "bottom", "end")
 BORDER_VAL = "single"
 BORDER_SPACE = "0"
 CENTER = "center"
-FOOTER_INDEX = "8"          
+FOOTER_INDEX = "11"          
 FOOTER_KEY = "Footer"       
 
 
@@ -55,7 +55,7 @@ SIDE_END = "end"
 
 
 CONFIG_ROOT_KEY = "1"
-DEFAULT_TITLE = "Reference API Endpoint"
+DEFAULT_TITLE = "Pro-Vizi WaWanesa Execution Guide"
 
 # --- SKIP keys ---
 SKIP_KEYS = {
@@ -71,7 +71,7 @@ WORD_NAMESPACE = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 XML_SPACE_ATTR = "{http://www.w3.org/XML/1998/namespace}space"
 
 # --- Cover Table Labels (optional: can also read dynamically) ---
-COVER_LABELS = ["Customer:", "Project:", "Date:", "Author(s):", "Reviewer(s):", "Version:", "Document No:"]
+COVER_LABELS = ["Client:", "Project:", "Date:", "Author(s):", "Reviewer(s):", "Version:", "Document No:"]
 
 # Style constants
 POST_TABLE_SPACER = ""  # empty string used for spacing after tables

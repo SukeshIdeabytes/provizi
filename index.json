@@ -1,170 +1,2035 @@
 {
-"template_file": "Pro-Vizi GreenShield Endpoint Reference PA3.docx",
-"output_file": "Pro-Vizi GreenShield Endpoint Referenc.docx",
-  "1": { "title": "Reference API Endpoint" },
-  "1.1": { "Customer": "Sterling Insurance Brokers Ltd" },
-  "1.2": { "Project": "Pro-Vizi" },
-  "1.3": { "Date": "2026-03-16" },
-  "1.4": { "Author(s)": "M Sukesh Reddy" },
-  "1.5": { "Reviewer(s)": "Anna Anthony" },
-  "1.6": { "Version": "PA3" },
-  "1.7": { "Document No": "1" },
-  "2": { "heading": "Purpose" },
-  "2.1": { "paragraph": "This document outlines the Pro-Vizi provisioning endpoints for the GreenShield platform. By specifying a supported function and providing the necessary data, Pro-Vizi interacts with the GreenShield platform to perform actions without UI interaction or human intervention." },
-  "2.2": { "paragraph": "GreenShield values are organized based on site functionality." },
-  "2.3": { "example": "Example GreenShield add-single payload" },
-  "2.4": { "example": "Example GreenShield add-family payload" },
-  "2.5": { "example": "Example GreenShield search-member payload" },
-  "2.6": { "example": "Example GreenShield terminate payload" },
-  "3": { "heading": "GreenShield Endpoint (EP) URL" },
-  "3.1": { "heading": "Functions" },
-  "3.1.1": { "paragraph": "The GreenShield endpoint supports the following functions:" },
-  "3.1.2": { "table_row": ["Function", "Purpose"] },
-  "3.1.3": { "table_row": ["add-single", "Add a single member (no dependents)"] },
-  "3.1.4": { "table_row": ["add-family", "Add a member with dependents"] },
-  "3.1.5": { "table_row": ["search-member", "Search for a member"] },
-  "3.1.6": { "table_row": ["terminate", "Terminate a member"] },
-  "4": { "heading": "General Structure" },
-  "4.1": { "paragraph": "Each payload requires the following common parameters:" },
-  "4.2": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "4.3": { "table_row": ["API-Key", "Text String", "Pro-Vizi API key"] },
-  "4.4": { "table_row": ["username", "Text String", "GreenShield username"] },
-  "4.5": { "table_row": ["password", "Text String", "GreenShield password"] },
-  "4.6": { "table_row": ["function", "Text String", "Desired function"] },
-  "5": { "heading": "Function-Specific Parameters" },
-  "5.1": { "heading": "add-single" },
-  "5.1.1": { "paragraph": "Requires a member JSON object." },
-  "5.1.2": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.1.3": { "table_row": ["coverage", "JSON Object", "Coverage info"] },
-  "5.1.4": { "table_row": ["personal", "JSON Object", "Personal info"] },
-  "5.1.5": { "table_row": ["address", "JSON Object", "Address info"] },
-  "5.1.6": { "table_row": ["employment", "JSON Object", "Employment info"] },
-  "5.1.7": { "table_row": ["banking", "JSON Object", "Banking info"] },
-  "5.1.8": { "table_row": ["meta", "JSON Object", "Additional info"] },
-  "5.2": { "heading": "coverage" },
-  "5.2.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.2.2": { "table_row": ["overrideCoverage", "Text", "Coverage override"] },
-  "5.2.3": { "table_row": ["dentalOption", "Text", "Dention"] },
-  "5.2.4": { "table_row": ["healthOption", "Text", "Health option"] },
-  "5.2.5": { "table_row": ["enrolmentOption", "Text", "Enrollment option"] },
-  "5.2.6": { "table_row": ["familyCategory", "Text", "Family category"] },
-  "5.2.7": { "table_row": ["overrideBenefitStartDate", "Text", "Start date"] },
-  "5.2.8": { "table_row": ["overrideReason", "Text", "Override reason"] },
-  "5.2.9": { "table_row": ["applicationDate", "Text", "Application date"] },
-  "5.2.10": { "table_row": ["ppmpOption", "Text", "PPMP option"] },
-  "5.3": { "heading": "personal" },
-  "5.3.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.3.2": { "table_row": ["firstName", "Text", "First name"] },
-  "5.3.3": { "table_row": ["middleName", "Text", "Middle name"] },
-  "5.3.4": { "table_row": ["lastName", "Text", "Last name"] },
-  "5.3.5": { "table_row": ["birthDate", "Text", "Birth date"] },
-  "5.3.6": { "table_row": ["gender", "Text", "Gender"] },
-  "5.3.7": { "table_row": ["language", "Text", "Language"] },
-  "5.4": { "heading": "contact" },
-  "5.4.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.4.2": { "table_row": ["email", "Text", "Email"] },
-  "5.4.3": { "table_row": ["confirmEmail", "Text", "Confirm email"] },
-  "5.4.4": { "table_row": ["homePhone", "Text", "Home phone"] },
-  "5.4.5": { "table_row": ["homeAreaCode", "Text", "Area code"] },
-  "5.4.6": { "table_row": ["officePhone", "Text", "Office phone"] },
-  "5.4.7": { "table_row": ["officeAreaCode", "Text", "Area code"] },
-  "5.4.8": { "table_row": ["extension", "Text", "Extension"] },
-  "5.5": { "heading": "address" },
-  "5.5.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.5.2": { "table_row": ["line1", "Text", "Address line 1"] },
-  "5.5.3": { "table_row": ["line2", "Text", "Address line 2"] },
-  "5.5.4": { "table_row": ["line3", "Text", "Address line 3"] },
-  "5.5.5": { "table_row": ["city", "Text", "City"] },
-  "5.5.6": { "table_row": ["province", "Text", "Province"] },
-  "5.5.7": { "table_row": ["country", "Text", "Country"] },
-  "5.5.8": { "table_row": ["postalCode", "Text", "Postal code"] },
-  "5.6": { "heading": "employment" },
-  "5.6.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.6.2": { "table_row": ["division", "Text", "Division"] },
-  "5.6.3": { "table_row": ["hireDate", "Text", "Hire date"] },
-  "5.6.4": { "table_row": ["classCode", "Text", "Class code"] },
-  "5.6.5": { "table_row": ["employmentType", "Text", "Employment type"] },
-  "5.6.6": { "table_row": ["jobTitle", "Text", "Job title"] },
-  "5.6.7": { "table_row": ["incomeRows", "Text", "Income rows"] },
-  "5.6.8": { "table_row": ["sectionId", "Text", "Section ID"] },
-  "5.6.9": { "table_row": ["currency", "Text", "Currency"] },
-  "5.7": { "heading": "banking" },
-  "5.7.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "5.7.2": { "table_row": ["bankNumber", "Text", "Bank number"] },
-  "5.7.3": { "table_row": ["transitNumber", "Text", "Transit number"] },
-  "5.7.4": { "table_row": ["accountNumber", "Text", "Account number"] },
-  "5.7.5": { "table_row": ["confirmBankNumber", "Text", "Confirm bank"] },
-  "5.7.6": { "table_row": ["confirmTransitNumber", "Text", "Confirm transit"] },
-  "5.7.7": { "table_row": ["confirmAccountNumber", "Text", "Confirm account"] },
-  "5.8": { "heading": "New Section Name" },
-  "5.8.1": { "paragraph": "Description of this section." },
-  "5.8.2": { "table_row": ["Column1", "Column2"] },
-  "5.8.3": { "table_row": ["Value1", "Value2"] },
-  "5.8.4": { "table_row": ["Value3", "Value4"] },
-  "5.9": { "heading": "meta" },
-  "5.9.1": { "paragraph": "Default values for system interaction." },
-  "5.9.2": { "table_row": ["Parameter", "Data Type", "Default"] },
-  "5.9.3": { "table_row": ["save", "Text", "0"] },
-  "5.9.4": { "table_row": ["cancelClicked", "Text", "0"] },
-  "5.9.5": { "table_row": ["dependentRows", "Text", "2"] },
-  "5.9.6": { "table_row": ["toolkitField", "Text", "NA"] },
-  "5.9.7": { "table_row": ["hiddenLastName", "Text", "NA"] },
-  "5.9.8": { "table_row": ["hiddenFirstName", "Text", "NA"] },
-  "5.9.9": { "table_row": ["hiddenBirthDate", "Text", "NA"] },
-  "6": { "heading": "Enrollment" },
-  "6.1": { "paragraph": "Requires an enrollment array." },
-  "6.2": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "6.3": { "table_row": ["firstName", "Text", "First name"] },
-  "6.4": { "table_row": ["lastName", "Text", "Last name"] },
-  "6.5": { "heading": "Search" },
-  "6.5.1": { "paragraph": "Used for verification after provisioning." },
-  "6.5.2": { "table_row": ["Parameter", "Data Type", "Function", "Default"] },
-  "6.5.3": { "table_row": ["coverage", "JSON", "Same as member", ""] },
-  "6.5.4": { "table_row": ["employment", "JSON", "Same as member", ""] },
-  "6.5.5": { "table_row": ["banking", "JSON", "Same as member", ""] },
-  "6.5.6": { "table_row": ["meta", "JSON", "Same as member", ""] },
-  "6.5.7": { "table_row": ["employeeDetails", "JSON", "Additional info", ""] },
-  "6.5.8": { "table_row": ["classCode", "Text", "Class code", "NA"] },
-  "6.5.9": { "table_row": ["divisionCode", "Text", "Division", "NA"] },
-  "6.5.10": { "table_row": ["status", "Text", "Status", "null"] },
-  "6.5.11": { "table_row": ["statusReason", "Text", "Reason", "0"] },
-  "6.5.12": { "table_row": ["sectionId", "Text", "Section ID", "NA"] },
-  "6.5.13": { "table_row": ["sortField", "Text", "Sort field", "1"] },
-  "6.5.14": { "table_row": ["sortOrder", "Text", "Sort order", "A"] },
-  "6.5.15": { "table_row": ["currentPage", "Text", "Page", "1"] },
-  "6.6": { "heading": "Form" },
-  "6.6.1": { "paragraph": "Additional required member data." },
-  "6.6.2": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "6.6.3": { "table_row": ["firstName", "Text", "First name"] },
-  "6.6.4": { "table_row": ["middleName", "Text", "Middle name"] },
-  "6.6.5": { "table_row": ["lastName", "Text", "Last name"] },
-  "6.6.6": { "table_row": ["birthDate", "Text", "Birth date"] },
-  "6.6.7": { "table_row": ["gender", "Text", "Gender"] },
-  "6.7": { "heading": "Employee Details" },
-  "6.7.1": { "table_row": ["Parameter", "Data Type", "Function"] },
-  "6.7.2": { "table_row": ["firstName", "Text", "First name"] },
-  "6.7.3": { "table_row": ["middleName", "Text", "Middle name"] },
-  "6.7.4": { "table_row": ["lastName", "Text", "Last name"] },
-  "6.7.5": { "table_row": ["birthDate", "Text", "Birth date"] },
-  "6.7.6": { "table_row": ["gender", "Text", "Gender"] },
-  "6.7.7": { "table_row": ["address1", "Text", "Address line 1"] },
-  "6.7.8": { "table_row": ["address2", "Text", "Address line 2"] },
-  "6.7.9": { "table_row": ["address3", "Text", "Address line 3"] },
-  "6.7.10": { "table_row": ["city", "Text", "City"] },
-  "6.7.11": { "table_row": ["postalCode", "Text", "Postal code"] },
-  "6.7.12": { "table_row": ["provinceCode", "Text", "Province"] },
-  "6.7.13": { "table_row": ["countryCode", "Text", "Country"] },
-  "6.7.14": { "table_row": ["correspondenceLanguage", "Text", "Language"] },
-  "6.7.15": { "table_row": ["email", "Text", "Email"] },
-  "6.8": { "heading": "New Section Name" },
-  "6.8.1": { "paragraph": "Description of this section." },
-  "6.8.2": { "table_row": ["Column1", "Column2"] },
-  "6.8.3": { "table_row": ["Value1", "Value2"] },
-  "6.8.4": { "table_row": ["Value3", "Value4"] },
-  "7": { "heading": "Appendix" },
-  "7.1": { "paragraph": "Example GreenShield add-single payload" },
-  "7.2": { "paragraph": "Example GreenShield add-family payload" },
-  "7.3": { "paragraph": "Example GreenShield search-member payload" },
-  "7.4": { "paragraph": "Example GreenShield terminate payload" },
-  "8": {"Footer":"Ideabytes Inc. Suite 580, 1000  Innovation Drive, Kanata, Ottawa, ON K2K 3E7"}
+    "template_file": "Pro-Vizi GreenShield Endpoint Reference PA3.docx",
+    "output_file": "Pro-Vizi WaWanesa Endpoint Referenc.docx",
+    "1": {
+        "title": ""
+    },
+    "1.1": {
+        "Client": "Sterling Insurance Brokers Ltd"
+    },
+    "1.2": {
+        "Project": "Pro-Vizi-WaWanesa Guide"
+    },
+    "1.3": {
+        "Date": "2026-03-16"
+    },
+    "1.4": {
+        "Author(s)": "M Sai Sukesh Reddy"
+    },
+    "1.5": {
+        "Reviewer(s)": "Anna Anthony"
+    },
+    "1.6": {
+        "Version": "PA3.0"
+    },
+    "1.7": {
+        "Document No": "1"
+    },
+    "2": {
+        "heading": "Purpose"
+    },
+    "2.1": {
+        "paragraph": "This document outlines the Pro-Vizi provisioning endpoints for the WaWanesa platform. By specifying a supported function and providing the necessary data, Pro-Vizi interacts with the WaWanesa platform to perform actions without UI interaction or human intervention."
+    },
+    "2.2": {
+        "paragraph": "WaWanesa values are organized based on site functionality."
+    },
+    "2.3": {
+        "example": "Example WaWanesa add-single payload"
+    },
+    "2.4": {
+        "example": "Example WaWanesa add-family payload"
+    },
+    "2.5": {
+        "example": "Example WaWanesa search-member payload"
+    },
+    "2.6": {
+        "example": "Example WaWanesa terminate payload"
+    },
+    "3": {
+        "heading": "WaWanesa Endpoint (EP) URL"
+    },
+    "3.1": {
+        "heading": "Functions"
+    },
+    "3.1.1": {
+        "paragraph": "The WaWanesa endpoint supports the following functions:"
+    },
+    "3.1.2": {
+        "table_row": [
+            "Function",
+            "Purpose"
+        ]
+    },
+    "3.1.3": {
+        "table_row": [
+            "add-single",
+            "Add a single member (no dependents)."
+        ]
+    },
+    "3.1.4": {
+        "table_row": [
+            "add-family",
+            "Add a member with spouse or dependent(s) or spouse with dependents."
+        ]
+    },
+    "3.1.5": {
+        "table_row": [
+            "search-member",
+            "Searches for a member using filters"
+        ]
+    },
+    "3.1.6": {
+        "table_row": [
+            "terminate",
+            "Terminates (removes) a member from the plan"
+        ]
+    },
+    "3.2": {
+        "heading": "General Structure"
+    },
+    "3.2.1": {
+        "paragraph": "Each payload requires the following common parameters:"
+    },
+    "3.2.2": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description",
+            "Example"        ]
+    },
+    "3.2.3": {
+        "table_row": [
+            "API-Key",
+            "String",
+            "Pro-Vizi API key",
+            "abc123"
+        ]
+    },
+    "3.2.4": {
+        "table_row": [
+            "username",
+            "String",
+            "WaWanesa username",
+            "@groupbenefitz.ca"
+        ]
+    },
+    "3.2.5": {
+        "table_row": [
+            "password",
+            "String",
+            "WaWanesa password",
+            "S123@"
+        ]
+    },
+    "3.2.6": {
+        "table_row": [
+            "function",
+            "String",
+            "Defines the operation to perform",
+            "add-single"
+        ]
+    },
+    "5": {
+        "heading": "Function-Specific Parameters add-single;"
+    },
+    "5.1": {
+        "paragraph": "Requires a member JSON object."
+    },
+    "5.1.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "5.1.2": {
+        "table_row": [
+            "policy",
+            "JSON Object",
+            "policy info"
+        ]
+    },
+    "5.1.3": {
+        "table_row": [
+            "address",
+            "JSON Object",
+            "address info"
+        ]
+    },
+    "5.1.4": {
+        "table_row": [
+            "contact",
+            "JSON Object",
+            "contact info"
+        ]
+    },
+    
+    "5.1.5": {
+        "table_row": [
+            "coverage",
+            "JSON Object",
+            "coverage info"
+        ]
+    },
+    "5.1.6": {
+        "table_row": [
+            "personal",
+            "JSON Object",
+            "personal info"
+        ]
+    },
+    "5.1.7": {
+        "table_row": [
+            "employment",
+            "JSON Object",
+            "employment info"
+        ]
+    },
+    "5.2": {
+        "paragraph": "Requires a member beneficiary (under the enrollment.form.body)."
+    },
+    "5.2.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "5.2.10": {
+        "table_row": [
+            "beneficiaries",
+            "JSON Object",
+            "member beneficiaries info"
+        ]
+    },
+    "5.2.11": {
+        "heading": "policy"
+    },
+    "5.2.12": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.13": {
+        "table_row": [
+            "policyNo",
+            "String",
+            "No",
+            "Unique number that indentifies the numbers insurance policy",
+            "POL1265"
+        ]
+    },
+    "5.2.14": {
+        "table_row": [
+            "clientCode",
+            "String",
+            "Yes",
+            "Code representing the client",
+            "BFRB/BFLX"
+        ]
+    },
+    "5.2.15": {
+        "heading": "address"
+    },
+    "5.2.16": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.17": {
+        "table_row": [
+            "City",
+            "String",
+            "Yes",
+            "City where the member resides",
+            "Toronto"
+        ]
+    },
+    "5.2.18": {
+        "table_row": [
+            "line1",
+            "String",
+            "Yes",
+            "Primary address line such as house number and street",
+            "House no,Street no,locality"
+        ]
+    },
+    "5.2.19": {
+        "table_row": [
+            "line2",
+            "String",
+            "No",
+            "Secondary address information such as apartment",
+            "landmark etc"
+        ]
+    },
+    "5.2.20": {
+        "table_row": [
+            "line3",
+            "String",
+            "No",
+            "Additional  address info",
+            "Building name or Gate number"
+        ]
+    },
+    "5.2.21": {
+        "table_row": [
+            "country",
+            "String",
+            "Yes",
+            "Country of residence",
+            "Canada"
+        ]
+    },
+    "5.2.22": {
+        "table_row": [
+            "Province",
+            "String",
+            "Yes",
+            "state of residence",
+            "ON"
+        ]
+    },
+    "5.2.23": {
+        "table_row": [
+            "postalCode",
+            "String",
+            "Yes",
+            "code for the address",
+            "M1A1A1"
+        ]
+    },
+    "5.2.24": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date from which the address becomes effective in the system",
+            "04/04/20XX"
+        ]
+    },
+    "5.2.25": {
+        "heading": "contact"
+    },
+    "5.2.26": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.27": {
+        "table_row": [
+            "email",
+            "String",
+            "Yes",
+            "Primary email address of the member",
+            "Abc.doe@gmail.com"
+        ]
+    },
+    "5.2.28": {
+        "table_row": [
+            "homePhone",
+            "String",
+            "No",
+            "Home telephone number for the member",
+            "87765467XX"
+        ]
+    },
+    "5.2.29": {
+        "table_row": [
+            "extension",
+            "String",
+            "No",
+            "Phone extension for office contact if applicable",
+            "8769XXXXXX"
+        ]
+    },
+    "5.2.30": {
+        "heading": "coverage"
+    },
+    "5.2.31": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.32": {
+        "table_row": [
+            "familyStatus",
+            "String",
+            "Yes",
+            "Indicates the member's family coverage type(single, Family).",
+            "S-Single,F1-Family,C2-Couple,"
+        ]
+    },
+    "5.2.33": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Coverage start date for the member",
+            "04/04/20XX"
+        ]
+    },
+    "5.2.34": {
+        "table_row": [
+            "overrideCoverage",
+            "String",
+            "No",
+            "overriding the existing coverage",
+            "--"
+        ]
+    },
+    "5.2.35": {
+        "table_row": [
+            "lateEntranceIndicator",
+            "Boolean",
+            "No",
+            "Indicates whether the member enrolled after the standard enrollment period",
+            "true/false"
+        ]
+    },
+    "5.2.36": {
+        "table_row": [
+            "lateEntranceStartDate",
+            "date (MM-DD-YYYY)",
+            "No",
+            "Late entrance effective date",
+            "04/06/20XX"
+        ]
+    },
+    "5.2.37": {
+        "table_row": [
+            "nihbElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates NIHB election status",
+            "true/false"
+        ]
+    },
+    "5.2.38": {
+        "table_row": [
+            "ramqElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates RAMQ election status",
+            "true/false"
+        ]
+    },
+    "5.2.39": {
+        "table_row": [
+            "extendedHealthCoverage",
+            "String",
+            "No",
+            "Specifies the level of extended health coverage provided to the member",
+            "F1"
+        ]
+    },
+    "5.2.40": {
+        "table_row": [
+            "psaContributionDeposit",
+            "String",
+            "No",
+            "It comes under the Member coverage",
+            "--"
+        ]
+    },
+    "5.2.41": {
+        "table_row": [
+            "hcsaContributionDeposit",
+            "Number",
+            "No",
+            "It comes under the Member coverage",
+            "--"
+        ]
+    },
+    "5.2.42": {
+        "heading": "personal"
+    },
+    "5.2.43": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.44": {
+        "table_row": [
+            "firstName",
+            "String",
+            "Yes",
+            "Member's First name",
+            "JOHN"
+        ]
+    },
+    "5.2.45": {
+        "table_row": [
+            "middleName",
+            "String",
+            "No",
+            "Member's middle name if available",
+            "K"
+        ]
+    },
+    "5.2.46": {
+        "table_row": [
+            "lastName",
+            "String",
+            "Yes",
+            "member's Surname",
+            "Dil"
+        ]
+    },
+    "5.2.47": {
+        "table_row": [
+            "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "5.2.48": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "5.2.49": {
+        "table_row": [
+            "suffix",
+            "String",
+            "No",
+            "A set of letters added to end of surname.",
+            "Jr,Mr,Mrs"
+        ]
+    },
+    "5.2.50": {
+        "table_row": [
+            "language",
+            "String",
+            "No",
+            "Preferred communication language of the member.",
+            "EN"
+        ]
+    },
+    "5.2.51": {
+        "table_row": [
+            "salutation",
+            "String",
+            "No",
+            "A format title indicate professional standing.",
+            "Mr"
+        ]
+    },
+    "5.2.52": {
+        "table_row": [
+            "smokerIndicator",
+            "Boolean",
+            "No",
+            "Indicates if member is smoker",
+            "true/false"
+        ]
+    },
+    "5.2.53": {
+        "heading": "employment"
+    },
+    "5.2.54": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.55": {
+        "table_row": [
+            "salary",
+            "Number",
+            "No",
+            "Employee salary",
+            "60000"
+        ]
+    },
+    "5.2.56": {
+        "table_row": [
+            "hireDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date when the employee was hired by the employer",
+            "04-04-20XX"
+        ]
+    },
+    "5.2.57": {
+        "table_row": [
+            "jobTitle",
+            "String",
+            "Yes",
+            "Official Job title of the employee",
+            "IT"
+        ]
+    },
+    "5.2.58": {
+        "table_row": [
+            "classCode",
+            "String",
+            "No",
+            "Employee classification code",
+            "A1"
+        ]
+    },
+    "5.2.59": {
+        "table_row": [
+            "sinNumber",
+            "String",
+            "No",
+            "Social Insurance Number",
+            "8786875"
+        ]
+    },
+    "5.2.60": {
+        "table_row": [
+            "alternateId",
+            "String",
+            "No",
+            "Other alternateId for member",
+            "654358"
+        ]
+    },
+    "5.2.61": {
+        "table_row": [
+            "workHoursPerWeek",
+            "String",
+            "No",
+            "Actual working hours counted for benefits elgibility",
+            "40"
+        ]
+    },
+    "5.2.62": {
+        "table_row": [
+            "billingDivisionNumber",
+            "String",
+            "No",
+            "Division number used for billing or employer grouping",
+            "41002"
+        ]
+    },
+    "5.2.63": {
+        "table_row": [
+            "employmentProvinceCode",
+            "String",
+            "Yes",
+            "province code where the employee is employed",
+            "ON"
+        ]
+    },
+    "5.2.64": {
+        "table_row": [
+            "employmentStatusTypeCode",
+            "String",
+            "Yes",
+            "Code indicating employement status such as Active, Terminated,etc.",
+            "A-active"
+        ]
+    },
+    "5.2.65": {
+        "heading": "beneficiaries"
+    },
+    "5.2.66": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.2.67": {
+        "table_row": [
+           "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "5.2.69": {
+        "table_row": [
+            "allocation",
+            "Integer",
+            "Yes",
+            "--",
+            "--"
+        ]
+    },
+    "5.2.70": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "5.2.71": {
+        "table_row": [
+            "relationship",
+            "String",
+            "Yes",
+            "--",
+            "BLI"
+        ]
+    },
+    "5.2.72": {
+        "table_row": [
+            "beneficiaryName",
+            "String",
+            "Yes",
+            "--",
+            "BLI"
+        ]
+    },
+    "5.2.73": {
+        "table_row": [
+            "clientAdminCode",
+            "String",
+            "Yes",
+            "--",
+            "BL"
+        ]
+    },
+    "5.2.74": {
+        "table_row": [
+            "clientAdminCode",
+            "String",
+            "Yes",
+            "--",
+            "BL"
+        ]
+    },
+    "5.2.75": {
+        "table_row": [
+            "beneficiaryTypeCode",
+            "String",
+            "Yes",
+            "--",
+            "BE"
+        ]
+    },
+    "5.2.76": {
+        "table_row": [
+            "irrevocableIndicator",
+            "Boolean",
+            "Yes",
+            "--",
+            "true/false"
+        ]
+    },
+    "6": {
+        "heading": "Function- add-family;"
+    },
+    "6.1": {
+        "paragraph": "Requires a member with one spouse (or) one dependent."
+    },
+    "6.1.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "6.1.2": {
+        "table_row": [
+            "policy",
+            "JSON Object",
+            "policy info"
+        ]
+    },
+    "6.1.3": {
+        "table_row": [
+            "address",
+            "JSON Object",
+            "address info"
+        ]
+    },
+    "6.1.4": {
+        "table_row": [
+            "contact",
+            "JSON Object",
+            "contact info"
+        ]
+    },
+    
+    "6.1.5": {
+        "table_row": [
+            "coverage",
+            "JSON Object",
+            "coverage info"
+        ]
+    },
+    "6.1.6": {
+        "table_row": [
+            "personal",
+            "JSON Object",
+            "personal info"
+        ]
+    },
+    "6.1.7": {
+        "table_row": [
+            "employment",
+            "JSON Object",
+            "employment info"
+        ]
+    },
+    "6.1.8": {
+        "table_row": [
+            "dependents",
+            "JSON Object",
+            "dependents info"
+        ]
+    },
+    "6.1.9": {
+        "paragraph": "Requires a member beneficiary (under the enrollment.form.body)."
+    },
+    "6.1.10": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "6.1.11": {
+        "table_row": [
+            "beneficiaries",
+            "JSON Object",
+            "member beneficiaries info"
+        ]
+    },
+    "6.1.12": {
+        "heading": "policy"
+    },
+    "6.1.13": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.14": {
+        "table_row": [
+            "policyNo",
+            "String",
+            "No",
+            "Unique number that indentifies the numbers insurance policy",
+            "POL1265"
+        ]
+    },
+    "6.1.15": {
+        "table_row": [
+            "clientCode",
+            "string",
+            "Yes",
+            "Code representing the client",
+            "BFRB/BFLX"
+        ]
+    },
+    "6.1.16": {
+        "heading": "address"
+    },
+    "6.1.17": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.18": {
+        "table_row": [
+            "City",
+            "String",
+            "Yes",
+            "City where the member resides",
+            "Toronto"
+        ]
+    },
+    "6.1.19": {
+        "table_row": [
+            "line1",
+            "String",
+            "Yes",
+            "Primary address line such as house number and street",
+            "House no,Street no,locality"
+        ]
+    },
+    "6.1.20": {
+        "table_row": [
+            "line2",
+            "String",
+            "No",
+            "Secondary address information such as apartment",
+            "landmark etc"
+        ]
+    },
+    "6.1.21": {
+        "table_row": [
+            "line3",
+            "String",
+            "No",
+            "Additional  address info",
+            "Building name or Gate number"
+        ]
+    },
+    "6.1.22": {
+        "table_row": [
+            "country",
+            "String",
+            "Yes",
+            "Country of residence",
+            "Canada"
+        ]
+    },
+    "6.1.23": {
+        "table_row": [
+            "Province",
+            "String",
+            "Yes",
+            "state of residence",
+            "ON"
+        ]
+    },
+    "6.1.24": {
+        "table_row": [
+            "postalCode",
+            "String",
+            "Yes",
+            "code for the address",
+            "M1A1A1"
+        ]
+    },
+    "6.1.25": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date from which the address becomes effective in the system",
+            "04/04/20XX"
+        ]
+    },
+    "6.1.26": {
+        "heading": "contact"
+    },
+    "6.1.27": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.28": {
+        "table_row": [
+            "email",
+            "String",
+            "Yes",
+            "Primary email address of the member",
+            "Abc.doe@gmail.com"
+        ]
+    },
+    "6.1.29": {
+        "table_row": [
+            "homePhone",
+            "String",
+            "No",
+            "Home telephone number for the member",
+            "87765467XX"
+        ]
+    },
+    "6.1.30": {
+        "table_row": [
+            "extension",
+            "Integer",
+            "No",
+            "Phone extension for office contact if applicable",
+            "8769XXXXXX"
+        ]
+    },
+    "6.1.31": {
+        "heading": "coverage"
+    },
+    "6.1.32": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.33": {
+        "table_row": [
+            "familyStatus",
+            "String",
+            "Yes",
+            "Indicates the member's family coverage type(single, Family).",
+            "S-Single,F1-Family,C2-Couple,"
+        ]
+    },
+    "6.1.34": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Coverage start date for the member",
+            "04/04/20XX"
+        ]
+    },
+    "6.1.35": {
+        "table_row": [
+            "overrideCoverage",
+            "String",
+            "No",
+            "overriding the existing coverage",
+            ""
+        ]
+    },
+    "6.1.36": {
+        "table_row": [
+            "lateEntranceIndicator",
+            "Boolean",
+            "No",
+            "Indicates whether the member enrolled after the standard enrollment period",
+            "true/false"
+        ]
+    },
+    "6.1.37": {
+        "table_row": [
+            "lateEntranceStartDate",
+            "Date",
+            "No",
+            "Late entrance effective date",
+            "04/06/20XX"
+        ]
+    },
+    "6.1.38": {
+        "table_row": [
+            "nihbElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates NIHB election status",
+            "true/false"
+        ]
+    },
+    "6.1.39": {
+        "table_row": [
+            "ramqElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates RAMQ election status",
+            "true/false"
+        ]
+    },
+    "6.1.40": {
+        "table_row": [
+            "extendedHealthCoverage",
+            "String",
+            "No",
+            "Specifies the level of extended health coverage provided to the member",
+            "F1"
+        ]
+    },
+    "6.1.41": {
+        "table_row": [
+            "psaContributionDeposit",
+            "String",
+            "No",
+            "It comes under the Member coverage",
+            "--"
+        ]
+    },
+    "6.1.42": {
+        "table_row": [
+            "hcsaContributionDeposit",
+            "Number",
+            "No",
+            "It comes under the Member coverage",
+            "--"
+        ]
+    },
+    "6.1.43": {
+        "heading": "personal"
+    },
+    "6.1.44": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.45": {
+        "table_row": [
+            "firstName",
+            "String",
+            "Yes",
+            "Member's First name",
+            "JOHN"
+        ]
+    },
+    "6.1.46": {
+        "table_row": [
+            "middleName",
+            "String",
+            "No",
+            "Member's middle name if available",
+            "K"
+        ]
+    },
+    "6.1.47": {
+        "table_row": [
+            "lastName",
+            "String",
+            "Yes",
+            "member's Surname",
+            "Dil"
+        ]
+    },
+    "6.1.48": {
+        "table_row": [
+            "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "6.1.49": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "6.1.50": {
+        "table_row": [
+            "suffix",
+            "String",
+            "No",
+            "A set of letters added to end of surname.",
+            "Jr,Mr,Mrs"
+        ]
+    },
+    "6.1.51": {
+        "table_row": [
+            "language",
+            "String",
+            "No",
+            "Preferred communication language of the member.",
+            "EN"
+        ]
+    },
+    "6.1.52": {
+        "table_row": [
+            "salutation",
+            "String",
+            "No",
+            "A format title indicate professional standing.",
+            "Mr"
+        ]
+    },
+    "6.1.53": {
+        "table_row": [
+            "smokerIndicator",
+            "Boolean",
+            "No",
+            "Indicates if member is smoker",
+            "true/false"
+        ]
+    },
+    "6.1.54": {
+        "heading": "employment"
+    },
+    "6.1.55": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.1.56": {
+        "table_row": [
+            "salary",
+            "Number",
+            "No",
+            "Employee salary",
+            "60000"
+        ]
+    },
+    "6.1.57": {
+        "table_row": [
+            "hireDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date when the employee was hired by the employer",
+            "04/04/20XX"
+        ]
+    },
+    "6.1.58": {
+        "table_row": [
+            "jobTitle",
+            "String",
+            "Yes",
+            "Official Job title of the employee",
+            "IT"
+        ]
+    },
+    "6.1.59": {
+        "table_row": [
+            "classCode",
+            "String",
+            "No",
+            "Employee classification code",
+            "A1"
+        ]
+    },
+    "6.1.60": {
+        "table_row": [
+            "sinNumber",
+            "String",
+            "No",
+            "Social Insurance Number",
+            "8786875"
+        ]
+    },
+    "6.1.61": {
+        "table_row": [
+            "alternateId",
+            "String",
+            "No",
+            "Other alternateId for member",
+            "654358"
+        ]
+    },
+    "6.1.62": {
+        "table_row": [
+            "workHoursPerWeek",
+            "String",
+            "No",
+            "Actual working hours counted for benefits elgibility",
+            "40"
+        ]
+    },
+    "6.1.63": {
+        "table_row": [
+            "billingDivisionNumber",
+            "String",
+            "No",
+            "Division number used for billing or employer grouping",
+            "41002"
+        ]
+    },
+    "6.1.64": {
+        "table_row": [
+            "employmentProvinceCode",
+            "String",
+            "Yes",
+            "province code where the employee is employed",
+            "ON"
+        ]
+    },
+    "6.1.65": {
+        "table_row": [
+            "employmentStatusTypeCode",
+            "String",
+            "Yes",
+            "Code indicating employement status such as Active, Terminated,etc.",
+            "A"
+        ]
+    },
+    "6.2": {
+        "heading": "Dependents"
+    },
+    "6.2.1": {
+        "heading": "spouse"
+    },
+    "6.2.2": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.2.3": {
+        "table_row": [
+            "emails",
+            "JSON Object",
+            "No",
+            "If spouse has email fill the following fields",
+            "{emailAddress:abc@aitestpro.com,effectiveDate:2026-02-01,emailTypeCode:WB }"
+        ]
+    },
+    "6.2.4": {
+        "table_row": [
+            "emailAddress",
+            "String",
+            "No",
+            "If spouse has email provide it",
+            "Abc.doe@gmail.com"
+        ]
+    },
+    "6.2.5": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "No",
+            "Start date of the spouse coverage",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.6": {
+        "table_row": [
+            "emailTypeCode",
+            "String",
+            "No",
+            "Enter the Email code for the spouse",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.7": {
+        "table_row": [
+            "phones",
+            "JSON Object",
+            "No",
+            "If spouse has Phone-no fill the following fields",
+            "{phoneNumber:1234567890 ,effectiveDate:2026-02-01,phoneTypeCode:CE,phoneExtension:null}"
+        ]
+    },
+    "6.2.8": {
+        "table_row": [
+            "phoneNumber",
+            "String",
+            "No",
+            "If spouse has Phone-no provide it",
+            "7654XXXXX"
+        ]
+    },
+    "6.2.9": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Start date of the spouse coverage",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.10": {
+        "table_row": [
+            "phoneTypeCode",
+            "String",
+            "No",
+            "If spouse has Phone-no provide it",
+            "7654XXXXX"
+        ]
+    },
+    "6.2.11": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Start date of the spouse coverage",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.12": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "6.2.13": {
+        "table_row": [
+            "suffix",
+            "String",
+            "No",
+            "A format title indicate professional standing.",
+            "Jr,Mr,Mrs"
+            
+        ]
+    },
+    "6.2.14": {
+        "table_row": [
+            "lastName",
+            "String",
+            "Yes",
+            "member's Surname",
+            "Mathew"
+        ]
+    },
+    "6.2.15": {
+        "table_row": [
+            "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "6.2.16": {
+        "table_row": [
+            "firstName",
+            "String",
+            "Yes",
+            "Member's First name",
+            "JOHN"
+        ]
+    },
+    "6.2.17": {
+        "table_row": [
+            "middleName",
+            "String",
+            "No",
+            "Member's middle name if available",
+            "keth"
+        ]
+    },
+    "6.2.18": {
+        "table_row": [
+            "schoolIndicator",
+            "Boolean",
+            "No",
+            "In school(yes/no)",
+            "Yes/No"
+        ]
+    },
+    "6.2.19": {
+        "table_row": [
+            "hasOtherCoverage",
+            "String",
+            "No",
+            "Any other existing coverages",
+            "--"
+        ]
+    },
+    "6.2.20": {
+        "table_row": [
+            "otherCoverageType",
+            "String",
+            "No",
+            "Any other existing coverage types",
+            "--"
+        ]
+    },
+    "6.2.21": {
+        "table_row": [
+            "participantTypeCode",
+            "String",
+            "No",
+            "It comes under the dependent",
+            "--"
+        ]
+    },
+    "6.2.22": {
+        "table_row": [
+            "lateEntranceIndicator",
+            "Boolean",
+            "No",
+            "Whether the member joined the coverage after the allowed enrollment period",
+            "true/false"
+        ]
+    },
+    "6.2.23": {
+        "table_row": [
+            "lateEntranceStartDate",
+            "date (MM-DD-YYYY)",
+            "No",
+            "Start date of the late entrance member",
+            "--"
+        ]
+    },
+    "6.2.24": {
+        "table_row": [
+            "nihbElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates NIHB election status",
+            "true/false"
+        ]
+    },
+    "6.2.25": {
+        "table_row": [
+            "ramqElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates RAMQ election status",
+            "true/false"
+        ]
+    },
+    "6.2.26": {
+        "heading": "children"
+    },
+    "6.2.27": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.2.28": {
+        "table_row": [
+            "emails",
+            "JSON Object",
+            "No",
+            "If children has email fill the following fields",
+            "{emailAddress:abc@aitestpro.com,effectiveDate:2026-02-01,emailTypeCode:WB }"
+        ]
+    },
+    "6.2.29": {
+        "table_row": [
+            "emailAddress",
+            "String",
+            "No",
+            "If spouse has email provide it",
+            "Abc.doe@gmail.com"
+        ]
+    },
+    "6.2.30": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "No",
+            "Start date of the children coverage",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.31": {
+        "table_row": [
+            "emailTypeCode",
+            "String",
+            "No",
+            "Enter the Email code for the children",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.32": {
+        "table_row": [
+            "phones",
+            "JSON Object",
+            "No",
+            "If children has Phone-no fill the following fields",
+            "{phoneNumber:1234567890 ,effectiveDate:2026-02-01,phoneTypeCode:CE,phoneExtension:null}"
+        ]
+    },
+    "6.2.33": {
+        "table_row": [
+            "phoneNumber",
+            "String",
+            "No",
+            "If children has Phone-no provide it",
+            "7654XXXXX"
+        ]
+    },
+    "6.2.34": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Start date of the children coverage",
+            "04/03/XXXX"
+        ]
+    },
+    "6.2.35": {
+        "table_row": [
+            "phoneTypeCode",
+            "String",
+            "No",
+            "If children has Phone-no provide it",
+            "7654XXXXX"
+        ]
+    },
+    "6.2.36": {
+        "table_row": [
+            "effectiveDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Start date of the children coverage",
+            "04/06/20XX"
+        ]
+    },
+    "6.2.37": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "6.2.38": {
+        "table_row": [
+            "suffix",
+            "String",
+            "No",
+            "A format title indicate professional standing.",
+            "Jr,Mr,Mrs"
+            
+        ]
+    },
+    "6.2.39": {
+        "table_row": [
+            "lastName",
+            "String",
+            "Yes",
+            "member's Surname",
+            "Mathew"
+        ]
+    },
+    "6.2.40": {
+        "table_row": [
+            "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "6.2.41": {
+        "table_row": [
+            "firstName",
+            "String",
+            "Yes",
+            "Member's First name",
+            "JOHN"
+        ]
+    },
+    "6.2.42": {
+        "table_row": [
+            "middleName",
+            "String",
+            "No",
+            "Member's middle name if available",
+            "keth"
+        ]
+    },
+    "6.2.43": {
+        "table_row": [
+            "schoolIndicator",
+            "Boolean",
+            "No",
+            "In school(yes/no)",
+            "Yes/No"
+        ]
+    },
+    "6.2.44": {
+        "table_row": [
+            "hasOtherCoverage",
+            "String",
+            "No",
+            "Any other existing coverages",
+            "--"
+        ]
+    },
+    "6.2.45": {
+        "table_row": [
+            "otherCoverageType",
+            "String",
+            "No",
+            "Any other existing coverage types",
+            "--"
+        ]
+    },
+    "6.2.46": {
+        "table_row": [
+            "participantTypeCode",
+            "String",
+            "No",
+            "It comes under the dependent",
+            "--"
+        ]
+    },
+    "6.2.47": {
+        "table_row": [
+            "lateEntranceIndicator",
+            "Boolean",
+            "No",
+            "Whether the member joined the coverage after the allowed enrollment period",
+            "true/false"
+        ]
+    },
+    "6.2.48": {
+        "table_row": [
+            "lateEntranceStartDate",
+            "date (MM-DD-YYYY)",
+            "No",
+            "Start date of the late entrance member",
+            "--"
+        ]
+    },
+    "6.2.49": {
+        "table_row": [
+            "nihbElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates NIHB election status",
+            "true/false"
+        ]
+    },
+    "6.2.50": {
+        "table_row": [
+            "ramqElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates RAMQ election status",
+            "true/false"
+        ]
+    },
+    "6.2.51": {
+        "heading": "beneficiaries"
+    },
+    "6.2.52": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.2.53": {
+        "table_row": [
+           "birthDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
+        ]
+    },
+    "6.2.54": {
+        "table_row": [
+            "allocation",
+            "Integer",
+            "Yes",
+            "--",
+            "--"
+        ]
+    },
+    "6.2.55": {
+        "table_row": [
+            "gender",
+            "enum (M/F)",
+            "Yes",
+            "Gender of member(M=male, F=Female).",
+            "M-male,F-female"
+        ]
+    },
+    "6.2.56": {
+        "table_row": [
+            "relationship",
+            "String",
+            "Yes",
+            "--",
+            "BLI"
+        ]
+    },
+    "6.2.57": {
+        "table_row": [
+            "beneficiaryName",
+            "String",
+            "Yes",
+            "--",
+            "BLI"
+        ]
+    },
+    "6.2.58": {
+        "table_row": [
+            "clientAdminCode",
+            "String",
+            "Yes",
+            "--",
+            "BL"
+        ]
+    },
+    "6.2.59": {
+        "table_row": [
+            "clientAdminCode",
+            "String",
+            "Yes",
+            "--",
+            "BL"
+        ]
+    },
+    "6.2.60": {
+        "table_row": [
+            "beneficiaryTypeCode",
+            "String",
+            "Yes",
+            "--",
+            "BE"
+        ]
+    },
+    "6.2.61": {
+        "table_row": [
+            "irrevocableIndicator",
+            "Boolean",
+            "Yes",
+            "--",
+            "true/false"
+        ]
+    },
+    "7": {
+        "heading": "Function- search-member;"
+    },
+    "7.1": {
+        "paragraph": "Used to search for the plan member"
+    },
+    "7.1.1": {
+        "table_row": [
+            "Parameter",
+            "Required",
+            "Description"
+        ]
+    },
+    "7.1.2": {
+        "table_row": [
+            "search-member",
+            "JSON Object",
+            "Member info"
+        ]
+    },
+    "7.1.3": {
+        "heading": "Enrollment.Search"
+    },
+    "7.1.4": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "7.1.5": {
+        "table_row": [
+            "Keyword",
+            "String",
+            "No",
+            "Searches for a member using keywords",
+            "--"
+        ]
+    },
+    "7.1.6": {
+        "table_row": [
+            "employeeNumber",
+            "Integer",
+            "Yes",
+            "Searches for a member using SubscriberID",
+            "12456"
+        ]
+    },
+    "7.1.7": {
+        "table_row": [
+            "certificate",
+            "String",
+            "Yes",
+            "Searches for a member using SubscriberID",
+            "--"
+        ]
+    },
+    "7.1.8": {
+        "table_row": [
+            "firstName",
+            "String",
+            "No",
+            "Searches for a member using firstname",
+            "JOHN"
+        ]
+    },
+    "7.1.9": {
+        "table_row": [
+            "lastName",
+           "String",
+            "No",
+            "Searches for a member using lastnames or surnames",
+            "Mathew"
+        ]
+    },
+    "7.1.10": {
+        "table_row": [
+            "currentPage",
+            "String",
+            "No",
+            "Searches for a member using pages",
+            "--"
+        ]
+    },
+    "7.1.11": {
+        "table_row": [
+            "divisionCode",
+            "String[]",
+            "No",
+            "identifies the specific division where the employee belongs or member belongs",
+            "41000,41001,41002,41003"
+        ]
+    },
+    "7.1.12": {
+        "table_row": [
+            "status",
+            "String[]",
+            "No",
+            "Whether the member is in active or unactive",
+            "Active,Deceased,Not Active"
+        ]
+    },
+    "9": {
+        "heading": "Function- terminate;"
+    },
+    "9.1": {
+        "paragraph": "Used to Remove the member from the plan"
+    },
+    "9.1.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "9.1.2": {
+        "table_row": [
+            "terminate",
+            "JSON Object",
+            "Terminates (removes) a member from the plan"
+        ]
+    },
+    "9.1.3": {
+        "heading": "terminate-query_params"
+    },
+    "9.1.4": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "9.1.5": {
+        "table_row": [
+            "identifier",
+            "String",
+            "Yes",
+            "SubscriberID",
+            "Abc123"
+        ]
+    },
+    "9.1.6": {
+        "table_row": [
+            "markAsDeceased",
+            "Boolean",
+            "No",
+            "If member has any Deceased",
+            "true/false"
+        ]
+    },
+    "9.1.7": {
+        "heading": "terminate-Body"
+    },
+    "9.1.8": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "9.1.9": {
+        "table_row": [
+            "terminationDate",
+            "date (MM-DD-YYYY)",
+            "Yes",
+            "Removed date",
+            "date (MM-DD-YYYY)"
+        ]
+    },
+    "9.1.10": {
+        "table_row": [
+            "dependentCovered",
+            "Boolean",
+            "No",
+            "Dependent members(if markAsDeceased is true)",
+            "true/false"
+        ]
+    },
+    "9.1.11": {
+        "table_row": [
+            "reason",
+            "String",
+            "Yes",
+            "Provide the reason for termination(if markAsDeceased is false)",
+            "--"
+        ]
+    },
+    "9.1.12": {
+        "table_row": [
+            "dependentNumbers",
+            "Integer",
+            "No",
+            "--",
+            "--"
+        ]
+    },
+    "10": {
+        "heading": "Appendix"
+    },
+    "10.1.1": {
+        "paragraph": "Example WaWanesa add-single payload"
+    },
+    "10.1.2": {
+        "paragraph": "Example WaWanesa add-family payload"
+    },
+    "10.1.3": {
+        "paragraph": "Example WaWanesa search-member payload"
+    },
+    "10.1.4": {
+        "paragraph": "Example WaWanesa terminate payload"
+    },
+    "11": {
+        "Footer": "Ideabytes Inc. Suite 580, 1000  Innovation Drive, Kanata, Ottawa, ON K2K 3E7"
+    }
 }

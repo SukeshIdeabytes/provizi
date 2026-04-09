@@ -1,13 +1,29 @@
 version -0.0.1
+02-04-2026
 1.updated the json file added heading and sections to it.
 2.acccording to json structure data the main.py export the document.
 version 0.0.2
+03-04-2026
 1.Added layout structure logic as in template 
 2.Updated the template layout and in script as well
 3.changed the logo of the document in header.
 version 0.0.3
+04-04-2026
 1.created new file constants.py in main.py by importing them variables.
 version 0.0.4
+03-04-2026
 1.added xml elements for each tables and borders cells.
 2.changed the logic for content.
 3.changes the json structure maintained indexing for each line.
+version 0.0.5
+07-04-2026
+1.created RestAPI server using the endpoint /generate document in this it will read the json in api only the update the docx file and generate the docx file to user.
+2.Changed main function in main.py to read json file by api.
+version 0.0.6
+08-04-2026
+1.changed the json structure same as the payload of greenshield.
+2.maintained the indexing numbering updated it.
+version 0.0.7
+09-04-2026
+1.changed the title of the document.
+2.updated the alignments for table of content.

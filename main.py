@@ -301,7 +301,11 @@ def generate(config: dict, template_path: str, output_path: str):
 
     doc.add_page_break()
     add_paragraph(doc, TOC_TITLE, TOC_HEADING_STYLE)
+    add_paragraph(doc, "",NORMAL_STYLE)
     insert_toc(doc)
+    style = doc.styles[TOC_HEADING_STYLE]
+    font = style.font
+    font.size = Pt(20)
 
     p = doc.add_paragraph()
     run = p.add_run()
@@ -347,6 +351,7 @@ def generate(config: dict, template_path: str, output_path: str):
             add_paragraph(doc, node[KEY_EXAMPLE], HEADING_STYLES[DEFAULT_HEADING_DEPTH])
             i += 1
             continue
+        
 
         if KEY_TABLE_ROW in node:
             parent = key.rsplit(".", 1)[0] if "." in key else key
@@ -373,17 +378,19 @@ def generate(config: dict, template_path: str, output_path: str):
     enable_auto_update_toc(doc)
     doc.save(output_path)
     print(f" Saved: {output_path}")
+    return output_path
 
 
 def main():
-    json_file = sys.argv[1]
+    json_file = 'index.json'
     with open(json_file, "r", encoding="utf-8") as f:
         config = json.load(f)
 
     template = config[TEMPLATE_FILE_KEY]
     output = config[OUTPUT_FILE_KEY]
 
-    generate(config, template, output)
+    output_path = generate(config, template, output)
+    return output_path
 
 
 if __name__ == "__main__":

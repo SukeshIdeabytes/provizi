@@ -27,3 +27,37 @@ version 0.0.7
 09-04-2026
 1.changed the title of the document.
 2.updated the alignments for table of content.
+version 0.0.8
+10-04-2026
+1.Overiding the if needed and json maintained each json file for each greenshield,wawanesa.
+version 0.0.9
+15-04-2026
+version 0.0.10
+1.added global values in json province codes and languages and division codes possible values has been added in json 
+17-04-2026
+version 0.0.11
+1.created the index.html file added the css styles and html structure and js logic to render the data from index.json to describe in the static webpage documentation
+2.added the js in the index.html logic that used for functions add-single and add-family and search member and terminate member these i have taken as special function because for this i have added the json code box to show the response and request and below the descriptions for request and response
+3.added sidebar function nested menu type dropdowns by main heading sub heading are in the dropdowns
+4.icons i have imported from font awesome icons 
+18-04-2026
+version 0.0.12
+1.added function rendersection which section is active it will render in the doc container 
+2.aligned the json code box and added the response json box.
+20-04-2026
+version 0.0.13
+1.In Side menu - introduced > expand collapse button and categorize the relationship
+2.added code box section for response payload examples And Response also 
+3.added the error codes for response.
+21-04-2026
+version 0.0.14
+1.Side menu -introduced > expand collapse button and categorize the relationship
+2.Worked on introduce code box section for response payload examples and Response also Added 4 tabs for success and error-1,error-2,error-3 and Added copy button in code box
+22-04-2026
+version 0.0.15
+1.added on onclick method for examples that should be added (if we click on country example click here that should be reflected to possible values country section table).
+2.created the function panel for the special functions for add-single add-fmily
+23-04-2026
+version 0.0.16
+1.In main code html and js the hardcoded values moved into constant.js
+2.In reqest json box the json code chnages for different functions.

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="constants.js"></script>
+    <title>API Integration Pro-Vizi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 25px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 38px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        a {
+            display: inline;
+            text-decoration: none;
+            color: #151718
+        }
+
+        .sidebar-item.sub {
+            display: block;
+            text-decoration: none;
+        }
+
+        .search-box {
+            padding: 7px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 180px;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .content {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .info-card {
+            background: #f1f1f1;
+            padding: 18px;
+            border-radius: 6px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 6px;
+
+        }
+
+        .request-section {
+            margin-top: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .request-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .request-header .label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .response-section {
+            margin-top: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+
+        }
+
+        .response-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+
+        }
+
+        .response-header .label {
+            font-weight: 600;
+            color: #333;
+
+        }
+
+        .tab {
+            padding: 5px 12px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background: #f3f3f3;
+            border-radius: 4px 4px 0 0;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background: #fff;
+            font-weight: 600;
+            color: #3b5aa3;
+        }
+
+        .code-box {
+            position: relative;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #f7f7f7;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+
+        }
+
+        .copy-btn {
+            position: sticky;
+            float: right;
+            top: -4px;
+            right: 0px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+        }
+
+        .copy-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .outer-box {
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            padding: 6px;
+            background: #fff;
+        }
+
+        .section {
+            border-top: 2px solid #cfcfcf;
+            border-bottom: 2px solid #cfcfcf;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+
+        .section-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        .section-title {
+            color: #151718;
+            font-size: 25px;
+            margin: 25px 0 10px;
+            font-weight: 600;
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background: #3b5aa3;
+            color: white;
+            padding: 5px;
+            text-align: left;
+
+        }
+
+        tr:nth-child(even) td {
+            background: #f2f2f2;
+
+        }
+
+        tr:nth-child(odd) td {
+            background: #ffffff;
+
+        }
+
+        td {
+            padding: 5px;
+            border-bottom: 2px solid #bebdbd;
+
+        }
+
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+        }
+
+        .sidebar-item {
+            padding: 5px 6px;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+        }
+
+        .sidebar-item:hover {
+            background: #f5f7fa;
+            color: #1a7ea3;
+
+        }
+
+        .sidebar-item.active {
+            background: #eaf3ff;
+            color: #1a7ea3;
+            font-weight: 600;
+
+        }
+
+        .section-list-item {
+            font-size: 13px;
+            padding: 5px 0;
+            cursor: pointer;
+            color: #555;
+
+        }
+
+        .section-list-item:hover {
+            color: #1a7ea3;
+        }
+
+        .section-list-item.active {
+            color: #1a7ea3;
+            font-weight: 600;
+        }
+
+        .arrow {
+            display: inline-block;
+            transition: transform 0.25s ease;
+        }
+
+        .fa-caret-right {
+            transition: transform 0.2s ease;
+            transform: rotate(0deg);
+
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+
+        .title1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            color: #2f4f6f;
+            text-decoration: underline;
+
+        }
+
+        .section-content {
+            display: none;
+            margin-top: 10px;
+            padding-left: 25px;
+            color: #333;
+
+        }
+
+        .sidebar-item {
+            cursor: pointer;
+            padding: 6px 10px;
+            user-select: none;
+        }
+
+        .sidebar-item.main {
+            font-weight: bold;
+
+        }
+
+        .sidebar-item.sub {
+            padding-left: 25px;
+            font-size: 14px;
+
+        }
+
+        .sub-container {
+            margin-left: 10px;
+        }
+
+        .active {
+            color: blue;
+        }
+
+        #function-panel {
+            display: none;
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+            animation: fadeIn 0.2s ease;
+
+        }
+
+        .click {
+            text-decoration: underline;
+            color: #3b5aa3;
+        }
+
+        .example-text {
+            color: #1a7ea3;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Pro-Vizi hires no back (1).png" alt="logo">
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar" id="sidebar"></div>
+        <div class="content">
+            <img src="feewfwef.png" style="height:40px;" alt="logo">
+            <div class="title"> API Integration Guide</div>
+            <div class="info-card" id="info-card"></div>
+
+            <div id="doc-container"></div>
+            <div id="function-panel"></div>
+        </div>
+    </div>
+    <script>
+
+        let data = {};
+        let keys = [];
+
+        // Load data from index.json
+        fetch("index1.json")
+            .then(response => response.json())
+            .then(json => {
+                data = json;
+
+                keys = Object.keys(data).sort((a, b) =>   //sort the keys 1,1.1,2,2.1......
+                    a.localeCompare(b, undefined, { numeric: true })
+                );
+
+                initializeApp(); //  run its logic after data loads
+            })
+            .catch(err => console.error(ERROR_MESSAGES.loadFailed, err));
+
+        let requestOpenState = true;
+        let isRequestOpen = false;
+
+        function initializeApp() {
+
+            const infoCard = document.getElementById("info-card");
+
+            keys.forEach(key => {
+                if (!key.startsWith("1.") || key === "1") return;
+
+                const item = data[key];
+                if (!item) return;
+
+                const label = Object.keys(item)[0];
+                const value = item[label];
+
+                const div = document.createElement("div");
+                div.innerHTML = `<b>${label}</b><br>${value}</br>`;
+                infoCard.appendChild(div);
+            });
+
+            const specialFunctions = SPECIAL_FUNCTIONS;
+            const sidebar = document.getElementById("sidebar"); // sidebar container
+            const groups = {};
+            let activeSpecialKey = null; // tracks open api panel
+
+
+            keys.forEach(key => { // loop through all keys
+                if (key === "1" || data[key]?.heading === "info-card") return;
+                const item = data[key];  // get data of that key 
+                if (!item || !item.heading) return;  // skip if no heading
+                const parts = key.split(".");
+                const mainKey = parts[0];  // extract main section 1.2-1
+                if (!groups[mainKey]) {
+                    groups[mainKey] = { main: null, subs: [] };// main sections and sub sections
+                }
+
+                if (parts.length === 1) {
+                    groups[mainKey].main = { key, heading: item.heading }; // main section
+                } else {
+                    groups[mainKey].subs.push({ key, heading: item.heading }); //sub section
+                }
+
+            });
+
+            var clickedDivId = 0;
+            Object.keys(groups)  // get all groups
+                .sort((a, b) => Number(a) - Number(b)) // sorts numerically
+                .forEach(groupKey => {  // loop each group
+                    const group = groups[groupKey];
+                    const mainDiv = document.createElement("div"); //creates sidebar item
+
+                    mainDiv.className = "sidebar-item main";
+                    let arrow = null;
+
+                    // only show arrow if sub items exist 
+                    if (
+                        group.subs.length > 0 && !EXCLUDED_HEADINGS.includes(group.main.heading)) {
+                        arrow = document.createElement("i"); // icon
+                        arrow.className = "fa-solid fa-caret-right";
+                    }
+
+                    const text = document.createElement("a");
+                    text.textContent = " " + group.main.heading; //heading display
+                    if (group.subs.length === 0) {
+                        text.href = "#" + group.main.heading;
+                    }
+
+                    if (arrow) mainDiv.appendChild(arrow);
+                    mainDiv.appendChild(text);
+                    const subContainer = document.createElement("div"); //hold sub items
+                    subContainer.className = "sub-container";
+                    subContainer.style.display = "none"; //initially hidden
+
+                    if (group.subs.length > 0) {
+                        mainDiv.onclick = () => {   //click behaviour
+                            clickedDivId = group.main.key;
+                            const isOpen = subContainer.style.display === "block"; // check open state
+                            subContainer.style.display = isOpen ? "none" : "block"; //expand and collapse
+                            arrow.classList.toggle("rotate", !isOpen);
+
+                            setActive(mainDiv);
+                            const sectionId = group.main.heading;
+                            const target = document.getElementById(sectionId);
+
+                            if (target) {
+                                target.scrollIntoView({ behavior: "smooth", block: "start" });  // find section smoot scroll
+                            }
+
+                            handleSidebarClick(group.main.key); // load content
+                        };
+                    } else {
+                        mainDiv.onclick = () => {
+                            clickedDivId = group.main.key;
+                            setActive(mainDiv);
+                            handleSidebarClick(group.main.key);
+                        };
+                    }
+
+                    sidebar.appendChild(mainDiv);
+                    sidebar.appendChild(subContainer);
+
+                    group.subs
+                        .sort((a, b) => a.key.localeCompare(b.key, undefined, { numeric: true }))
+                        .forEach(sub => {
+                            const subDiv = document.createElement("a");  //create sub items
+                            subDiv.className = "sidebar-item sub";
+                            subDiv.textContent = sub.heading;
+                            subDiv.href = "#" + sub.heading;  // anchor link
+
+                            subDiv.onclick = (e) => { //prevent parent click
+                                e.stopPropagation();
+                                setActive(subDiv);  // by highlighting load the content
+                                handleSidebarClick(sub.key);
+                            };
+
+                            subContainer.appendChild(subDiv);
+                        });
+
+                });
+
+            // click handler handles the special functions 
+            function handleSidebarClick(key) {
+                const mainKey = key.split(".")[0];
+                const isSpecial = specialFunctions.includes(mainKey);
+
+                if (!isSpecial) {
+                    closePanel();
+                    renderSection(key);
+                } else {
+                    if (activeSpecialKey === key) {
+                        closePanel();
+                    } else {
+                        activeSpecialKey = key;
+                        renderFunctionPanel(key);
+                    }
+                }
+            }
+
+            function closePanel() {
+                activeSpecialKey = null;
+                const panel = document.getElementById("function-panel");
+                panel.style.display = "none";
+                panel.innerHTML = ""; // reset and show adds req json section
+            }
+            function getFunctionKey(startKey, data) {
+                // get main key (e.g. "2.1" → "2")
+                const mainKey = startKey.split(".")[0];
+
+                const heading = data[mainKey]?.heading || "";
+
+                return heading
+                    .replace("Function-", "")
+                    .trim()
+                    .toLowerCase()
+                    .replace(/\s+/g, "-");
+            }
+
+            function renderFunctionPanel(startKey) {
+                const panel = document.getElementById("function-panel");
+                document.querySelectorAll(".sidebar-item").forEach(el => el.classList.remove("active"));
+                panel.innerHTML = ""; // adds response section
+                const title = document.createElement("div");
+                title.className = "section-title";
+                title.innerText = data[startKey]?.heading || startKey;
+                panel.appendChild(title);
+                panel.style.display = "block";
+                clickedDivId = startKey;
+                const codeWrap = document.createElement("div");
+                codeWrap.className = "request-section";
+
+                const fnKey = getFunctionKey(startKey, data);
+                const requestBody = REQUEST_BODIES[fnKey] || "{}";
+
+                codeWrap.innerHTML = `<div class="request-header">
+                    <span class="label">Request:</span>
+                    <span class="tab active">JSON</span>
+                    </div>
+                    <div class="outer-box">
+                        <div class="code-box">
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <pre>${requestBody}</pre>
+                                </div>
+                                </div>
+                                `;
+
+                panel.appendChild(codeWrap);
+
+                const req = document.createElement("div");
+
+                req.className = "section";
+                const reqHeader = document.createElement("div");
+                reqHeader.className = "section-header";
+                reqHeader.innerHTML = `
+                <i class="fa-solid fa-caret-right arrow"></i>
+                <span class="title1">${LABELS.requestField}</span>`;
+
+                reqHeader.onclick = () => {
+                    toggleSection(reqHeader);
+                    isRequestOpen = reqContent.style.display === "block";
+                };
+                const reqContent = document.createElement("div");
+                const responseHolder = document.createElement("div");
+                reqContent.className = "section-content";
+                reqContent.style.display = isRequestOpen ? "block" : "none";
+
+                if (isRequestOpen) {
+                    reqHeader.querySelector(".arrow")?.classList.add("rotate");
+                }
+                req.appendChild(reqHeader);
+                req.appendChild(reqContent);
+
+                panel.appendChild(req);
+
+                let table = null;
+                keys.forEach(key => {
+                    if (key !== startKey && !key.startsWith(startKey + ".")) return;
+                    const item = data[key];
+                    if (!item) return;
+                    if (item.heading) {
+
+                        if (item.heading.startsWith("Response")) {
+
+                            const h = document.createElement("div");
+                            h.className = "section-title";
+                            h.id = item.heading;
+                            h.innerText = item.heading;
+
+                            responseHolder.appendChild(h); //  important
+
+                            table = null;
+                            return;
+                        }
+
+                        // NORMAL FLOW
+                        const h = document.createElement("div");
+                        h.className = "section-title";
+                        h.id = item.heading;
+                        h.innerText = item.heading;
+
+                        reqContent.appendChild(h);
+                        table = null;
+                    }
+
+                    if (item.paragraph) {
+                        const p = document.createElement("p");
+                        p.innerText = item.paragraph;
+                        reqContent.appendChild(p);
+
+                    }
+
+                    if (item.example) {
+                        const ex = document.createElement("p");
+                        ex.style.color = "#1a7ea3";
+                        ex.style.fontStyle = "italic";
+                        ex.innerText = item.example;
+                        reqContent.appendChild(ex);
+
+                    }
+
+                    if (item.table_row) {
+                        if (!table) {
+                            table = document.createElement("table");
+                            table.style.width = "100%";
+                            table.style.borderCollapse = "collapse";
+                            reqContent.appendChild(table);
+                        }
+
+                        const tr = document.createElement("tr");
+                        item.table_row.forEach((cell, index) => {
+
+                            const isHeader = !table.querySelector("tr");
+                            const td = document.createElement(isHeader ? "th" : "td");
+
+
+                            if (COUNTRY_KEYS.includes(key)) {
+                                if (index === item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${COUNTRY_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (PROVINCE_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${PROVINCE_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (COVERAGE_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${COVERAGE_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (GENDER_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${GENDER_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (DIVISION_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${DIVISION_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (EMPLOYMENT_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${EMPLOYMENT_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else {
+                                td.innerText = cell;
+                            }
+
+                            // td.innerText = cell;
+                            td.style.border = TABLE_STYLES.border;
+                            td.style.padding = TABLE_STYLES.padding;
+                            tr.appendChild(td);
+
+                        });
+
+                        table.appendChild(tr);
+
+                    }
+
+                });
+                const responseCode = document.createElement("div");
+                responseCode.className = "response-section";
+                responseCode.innerHTML = `
+                <div class="request-header">
+                    <span class="label">Response:</span>
+                    <div class="tabs">
+                        <span class="tab active">Success</span>
+                        <span class="tab">Error-1</span>
+                        <span class="tab">Error-2</span>
+                        </div>
+                        </div>
+                        <div class="outer-box">
+                            <div class="code-box">
+                                <button class="copy-btn">
+                                    <i class="fa-solid fa-copy"></i>
+                                    </button>
+                                    <pre>${SUCCESS_RESPONSE}</pre>
+                                    </div>
+                                    </div>`;
+
+                panel.appendChild(responseCode);
+                const tabs = responseCode.querySelectorAll(".tab");
+                tabs.forEach(tab => {
+                    tab.addEventListener("click", () => {
+                        tabs.forEach(t => t.classList.remove("active"));
+                        tab.classList.add("active");
+                        const pre = responseCode.querySelector("pre");
+                        if (tab.textContent === "Success") {
+                            pre.textContent = `${SUCCESS_RESPONSE}`;
+
+                        }
+                        if (tab.textContent === "Error-1") {
+                            pre.textContent = `${ERROR1_RESPONSE}`;
+
+                        }
+                        if (tab.textContent === "Error-2") { pre.textContent = ``; }
+                        if (tab.textContent === "Error-3") { pre.textContent = ``; }
+
+                    });
+
+                });
+
+                const resSection = document.createElement("div");
+                resSection.className = "section";
+                const resHeader = document.createElement("div");
+                resHeader.className = "section-header";
+                resHeader.innerHTML = `<i class="fa-solid fa-caret-right arrow"></i>
+                <span class="title1">${LABELS.responseField}</span>
+                `;
+
+                const resContent = document.createElement("div");
+                resContent.className = "section-content";
+                resContent.style.display = "none";
+                resHeader.onclick = () => {
+                    const isOpen = resContent.style.display === "block";
+                    resContent.style.display = isOpen ? "none" : "block";
+                    const icon = resHeader.querySelector(".arrow");
+                    if (icon) icon.classList.toggle("rotate", !isOpen);
+                    window.resContent = resContent;
+
+                };
+
+                resSection.appendChild(resHeader);
+                //   resSection.appendChild(resContent);
+                //   resContent.appendChild(responseHolder);
+
+                panel.appendChild(resSection);
+                panel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            }
+
+            // render main content in main page
+            function renderSection(startKey) {
+                clickedDivId = startKey;
+                const container = document.getElementById("doc-container");
+                container.innerHTML = "";
+                let table = null;
+                keys.forEach(key => {
+                    if (key === "1" || data[key]?.heading === "info-card") return;
+                    if (specialFunctions.some(x => key === x || key.startsWith(x + "."))) return; //skip the special functions
+                    const item = data[key];
+                    if (!item) return;
+                    if (item.heading) {
+
+                        const h = document.createElement("div");
+                        h.className = "section-title";
+                        h.id = item.heading;
+                        h.innerText = item.heading;
+                        container.appendChild(h);
+                        table = null;
+
+                    }
+
+                    if (item.paragraph) {
+                        const p = document.createElement("p");
+                        p.innerText = item.paragraph;
+                        container.appendChild(p);
+
+                    }
+
+                    if (item.example) {
+                        const ex = document.createElement("p");
+                        ex.classList.add("example-text");
+                        ex.innerText = item.example;
+                        container.appendChild(ex);
+
+                    }
+
+                    if (item.table_row) {
+                        if (!table) {
+                            table = document.createElement("table");
+                            table.style.width = "100%";
+                            table.style.borderCollapse = "collapse";
+                            container.appendChild(table);
+
+                        }
+
+                        const tr = document.createElement("tr");
+                        item.table_row.forEach(cell => {
+                            const isHeader = !table.querySelector("tr");
+                            const td = document.createElement(isHeader ? "th" : "td");
+
+                            td.innerText = cell;
+                            td.style.border = TABLE_STYLES.border;
+                            td.style.padding = TABLE_STYLES.padding;
+                            tr.appendChild(td);
+
+                        });
+                        table.appendChild(tr);
+
+                    }
+
+                });
+
+            }
+
+            // removes all active add active to clicked
+            function setActive(element) {
+                document.querySelectorAll(".sidebar-item")
+                    .forEach(el => el.classList.remove("active"));
+                element.classList.add("active");
+            }
+
+            function toggleSection(header) {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector(".arrow");
+                const isOpen = content.style.display === "block";
+                content.style.display = isOpen ? "none" : "block";
+                if (arrow) {
+                    arrow.classList.toggle("rotate", !isOpen);
+                }
+
+            }
+            document.addEventListener("click", function (e) {
+                if (!e.target.closest(".copy-btn")) return;
+
+                const btn = e.target.closest(".copy-btn");
+                const codeBox = btn.closest(".code-box");
+                const pre = codeBox.querySelector("pre");
+
+                const text = pre ? pre.innerText : "";
+
+                navigator.clipboard.writeText(text)
+                    .then(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                        setTimeout(() => {
+                            btn.innerHTML = '<i class="fa-solid fa-copy"></i>';
+                        }, 1500);
+                    })
+                    .catch(() => {
+                        const textarea = document.createElement("textarea");
+                        textarea.value = text;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand("copy");
+                        document.body.removeChild(textarea);
+                    });
+            });
+            const content = document.querySelector(".content");
+            content.addEventListener("scroll", () => { // detect visible section
+                const sections = document.querySelectorAll(".section-title");
+
+                let current = null;
+                sections.forEach(sec => {
+                    const rect = sec.getBoundingClientRect();
+
+                    if (rect.top <= 120) {
+                        current = sec;
+                    }
+                });
+
+                if (current) {
+                    const id = current.id;
+
+                    document.querySelectorAll(".sidebar-item").forEach(el => {
+                        el.classList.remove("active"); //highlight sidebar
+
+                        if (el.textContent.trim() === id) {
+                            el.classList.add("active");
+                        }
+                    });
+                }
+            });
+            renderSection(); // load the initial content
+        }
+    </script>
+</body>
+
+</html>

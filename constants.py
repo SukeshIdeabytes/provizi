@@ -55,7 +55,7 @@ SIDE_END = "end"
 
 
 CONFIG_ROOT_KEY = "1"
-DEFAULT_TITLE = "Pro-Vizi WaWanesa Execution Guide"
+DEFAULT_TITLE = "Pro-Vizi Greenshield Execution Guide"
 
 # --- SKIP keys ---
 SKIP_KEYS = {

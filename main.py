@@ -152,7 +152,7 @@ def insert_toc(doc):
     fldChar.set(qn('w:fldCharType'), 'separate')
     run._r.append(fldChar)
 
-    run = paragraph.add_run("Right-click → Update Field")
+    run = paragraph.add_run("Note: Right-click and select Update Field to refresh the table of contents.")
     
     fldChar = OxmlElement('w:fldChar')
     fldChar.set(qn('w:fldCharType'), 'end')

@@ -11,7 +11,7 @@ def generate_doc():
         print(request.files)
 
         if 'file' not in request.files:
-            return jsonify({"error": "No file uploaded. Check Postman key name."}), 400
+            return jsonify({"error": "No file uploaded"}), 400
 
         uploaded_file = request.files['file']
         if uploaded_file.filename == "":

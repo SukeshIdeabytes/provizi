@@ -134,19 +134,3 @@ Example error response:
  "error": "No file uploaded"
 }
 
-## Use Cases
-- API documentation generation
-- Automated report generation
-- Policy document creation
-- Technical documentation automation
-- Structured content generation
-
-## Advantages
-- Eliminates manual document editing
-- Ensures consistent document structure
-- Easy integration with other systems
-- Flexible configuration using JSON
-- Scalable for automated workflows
-
-## Author
-Sukesh Reddy

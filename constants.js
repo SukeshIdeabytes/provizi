@@ -16,10 +16,10 @@ const COUNTRY_KEYS = ["6.3.6", "5.3.6"];
 const COUNTRY_LINK = "#Country";
 
 const PROVINCE_KEYS = ["5.3.7", "6.3.7"];
-const PROVINCE_LINK = "#Country#Province%20Codes";
+const PROVINCE_LINK = "#Province%20Codes";
 
 const COVERAGE_KEYS = ["5.5.9", "6.6.10"];
-const COVERAGE_LINK = "#Country#Province%20Codes";
+const COVERAGE_LINK = "#Extended%20Health%20Coverage";
 
 const GENDER_KEYS = ["5.6.6", "6.7.6","6.9.12","6.10.11"];
 const GENDER_LINK = "#Gender%20Codes";
@@ -150,78 +150,189 @@ const REQUEST_BODIES = {
       "spouse": [],
       "children": []
     }
-  ],
-  "enrollment": {
-    "form": {
-      "body": [
-          "endDate": "",
-          "coverage": {
-            "ppmpOption": "",
-            "dentalOption": "",
-            "familyStatus": "",
-            "healthOption": "",
-            "effectiveDate": "",
-            "familyCategory": "",
-            "applicationDate": "",
-            "enrolmentOption": "",
-            "overrideCoverage": "",
-            "lateEntranceIndicator": null,
-            "lateEntranceStartDate": null,
-            "nihbElectionIndicator": null,
-            "ramqElectionIndicator": null,
-            "extendedHealthCoverage": "",
-            "psaContributionDeposit": null,
-            "hcsaContributionDeposit": null,
-            "overrideBenefitStartDate": "",
-            "overrideBenefitStartReason": ""
-          },
-          "startDate": "",
-          "employment": {
-            "salary": "",
-            "currency": "",
-            "division": "",
-            "hireDate": "",
-            "jobTitle": "",
-            "classCode": "",
-            "sectionId": "",
-            "sinNumber": null,
-            "incomeRows": "",
-            "alternateId": null,
-            "familyStatus": "",
-            "employmentType": "",
-            "workPercentage": null,
-            "workHoursPerWeek": "",
-            "clientDefinedField1": "",
-            "billingDivisionNumber": null,
-            "employmentProvinceCode": "",
-            "employmentStatusTypeCode": ""
-          },
-          "categoryCode": "",
-          "employeeDetails": {
-            "city": "",
-            "email": "",
-            "gender": "",
-            "address1": "",
-            "address2": "",
-            "address3": "",
-            "lastName": "",
-            "birthDate": "",
-            "firstName": "",
-            "middleName": "",
-            "postalCode": "",
-            "countryCode": "",
-            "provinceCode": "",
-            "correspondenceLanguage": ""
-          },
-          "employmentStatus": null
-        }
-      ]
+  },`,
+  "add-family": `{
+    "API-Key": "abc123",
+    "username": "user",
+    "password": "sXXXX",
+    "function": "add-single",
+
+    "member": {
+
+        "body": [
+            {
+                "policy": {
+                    "policyNo": null,
+                    "clientCode": "BFLX"
+                },
+                "coverage": {
+                    "effectiveDate": "03/01/2026",
+                    "familyStatus": "",
+                    "extendedHealthCoverage": "F1",
+                    "overrideCoverage": "",
+                    "lateEntranceIndicator": false,
+                    "lateEntranceStartDate": null,
+                    "nihbElectionIndicator": false,
+                    "ramqElectionIndicator": false,
+                    "psaContributionDeposit": null,
+                    "hcsaContributionDeposit": null,
+                    "dentalOption": "",
+                    "healthOption": "",
+                    "enrolmentOption": "",
+                    "familyCategory": "",
+                    "overrideBenefitStartDate": "",
+                    "overrideReason": "",
+                    "applicationDate": "",
+                    "ppmpOption": ""
+                },
+                "personal": {
+                    "firstName": "ZmakOutsider",
+                    "lastName": "test",
+                    "preferredFirstName": "zz",
+                    "middleName": "ak",
+                    "birthDate": "01/01/2000",
+                    "gender": "M",
+                    "language": "E",
+                    "suffix": null,
+                    "salutation": null,
+                    "smokerIndicator": null
+                },
+                "contact": {
+                    "email": "ZmakOutsidertest@aitestpro.com",
+                    "confirmEmail": "",
+                    "homeAreaCode": "",
+                    "homePhone": "1234567890",
+                    "officeAreaCode": "",
+                    "officePhone": "",
+                    "extension": null
+                },
+                "address": {
+                    "line1": "1000, innovation",
+                    "line2": "1002, innovation",
+                    "line3": "1003, innovation",
+                    "city": "ottawa",
+                    "province": "ON",
+                    "country": "CAN",
+                    "postalCode": "K2K3E7",
+                    "effectiveDate": "03/01/2026"
+                },
+                "employment": {
+                    "salary": null,
+                    "division": "",
+                    "hireDate": "01/01/2026",
+                    "familyStatus": "",
+                    "sinNumber": null,
+                    "alternateId": null,
+                    "clientDefinedField1": "A",
+                    "billingDivisionNumber": "41000",
+                    "employmentProvinceCode": "ON",
+                    "employmentStatusTypeCode": "A",
+                    "workPercentage": null,
+                    "classCode": "",
+                    "employmentType": "",
+                    "jobTitle": "",
+                    "workHoursPerWeek": "",
+                    "incomeRows": "",
+                    "sectionId": "",
+                    "currency": ""
+                },
+            }
+        ]
+
     },
-  "execution_id": 20047
-}
- 
-  }`,
-  "add-family": `{  }`,
+    "dependents": [
+        {
+            "spouse": [
+                {
+                    "emails": [
+                        {
+                            "emailAddress": "Zspouse@provizi.com",
+                            "effectiveDate": "03/01/2026",
+                            "emailTypeCode": "WB"
+                        }
+                    ],
+                    "phones": [
+                        {
+                            "phoneNumber": "1234567890",
+                            "effectiveDate": "03/01/2026",
+                            "phoneTypeCode": "CE",
+                            "phoneExtension": null
+                        }
+                    ],
+                    "suffix": null,
+                    "firstName": "ZSpouseFirst",
+                    "lastName": "TEST",
+                    "middleName": "fak",
+                    "gender": "F",
+                    "birthDate": "02/01/2002",
+                    "language": "",
+                    "effectiveDate": "03/01/2026",
+                    "participantTypeCode": "SP",
+                    "schoolIndicator": null,
+                    "hasOtherCoverage": true,
+                    "otherCoverageType": "S",
+                    "lateEntranceIndicator": false,
+                    "lateEntranceStartDate": null,
+                    "nihbElectionIndicator": false,
+                    "ramqElectionIndicator": false,
+                    "carrierFields": {
+                        "dep_sex_lineid": "",
+                        "dep_mode_lineid": "",
+                        "dep_birthday_lineid": "",
+                        "dep_last_name_lineid": "",
+                        "dep_first_name_lineid": "",
+                        "calDLCoverageExpDate": "",
+                        "cmbDLCorrespLang": "",
+                        "cmbDLRelationSubcategory": ""
+                    }
+                }
+            ],
+            "children": [
+                {
+                    "emails": [
+                        {
+                            "emailAddress": "zchild@provizi.com",
+                            "effectiveDate": "03/01/2026",
+                            "emailTypeCode": "WB"
+                        }
+                    ],
+                    "phones": [
+                        {
+                            "phoneNumber": "1234567890",
+                            "effectiveDate": "03/01/2026",
+                            "phoneTypeCode": "CE",
+                            "phoneExtension": ""
+                        }
+                    ],
+                    "firstName": "ZCHILDFIRST",
+                    "lastName": "TEST",
+                    "middleName": "cak",
+                    "gender": "F",
+                    "birthDate": "02/01/2004",
+                    "language": "",
+                    "effectiveDate": "03/01/2026",
+                    "participantTypeCode": "AD",
+                    "schoolIndicator": true,
+                    "hasOtherCoverage": false,
+                    "otherCoverageType": null,
+                    "lateEntranceIndicator": false,
+                    "lateEntranceStartDate": null,
+                    "nihbElectionIndicator": false,
+                    "ramqElectionIndicator": false,
+                    "carrierFields": {
+                        "dep_sex_lineid": "",
+                        "dep_mode_lineid": "",
+                        "dep_birthday_lineid": "",
+                        "dep_last_name_lineid": "",
+                        "dep_first_name_lineid": "",
+                        "calDLCoverageExpDate": "",
+                        "cmbDLCorrespLang": "",
+                        "cmbDLRelationSubcategory": ""
+                    }
+                }
+            ]
+        }
+    ],`,
   "search-member": ` "search": {
       "body": [
         {

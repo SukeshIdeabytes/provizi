@@ -6,7 +6,7 @@
         "Client": "Sterling Insurance Brokers Ltd"
     },
     "1.2": {
-        "Project": "Pro-Vizi-GreenShield Integration Guide"
+        "Project": "Pro-Vizi-Wawanesa Integration Guide"
     },
     "1.3": {
         "Date": "2026-03-16"
@@ -21,37 +21,37 @@
         "Version": "PA3.0"
     },
     "1.7": {
-        "Document No": "1"
+        "Document No": "2"
     },
     "2": {
         "heading": "Purpose"
     },
     "2.1": {
-        "paragraph": "This document outlines the Pro-Vizi provisioning endpoints for the GreenShield platform. By specifying a supported function and providing the necessary data, Pro-Vizi interacts with the GreenShield platform to perform actions without user interface interaction or human intervention."
+        "paragraph": "This document outlines the Pro-Vizi provisioning endpoints for the Wawanesa platform. By specifying a supported function and providing the necessary data, Pro-Vizi interacts with the Wawanesa platform to perform actions without user interface interaction or human intervention."
     },
     "2.2": {
-        "paragraph": "GreenShield values are organized based on site functionality."
+        "paragraph": "Wawanesa values are organized based on site functionality."
     },
     "2.3": {
-        "example": "Example GreenShield add-single payload"
+        "example": "Example Wawanesa add-single payload"
     },
     "2.4": {
-        "example": "Example GreenShield add-family payload"
+        "example": "Example Wawanesa add-family payload"
     },
     "2.5": {
-        "example": "Example GreenShield search-member payload"
+        "example": "Example Wawanesa search-member payload"
     },
     "2.6": {
-        "example": "Example GreenShield terminate payload"
+        "example": "Example Wawanesa terminate payload"
     },
     "3": {
-        "heading": "GreenShield Endpoint (EP) URL"
+        "heading": "Wawanesa Endpoint (EP) URL"
     },
     "3.1": {
         "heading": "Functions"
     },
     "3.1.1": {
-        "paragraph": "The GreenShield endpoint supports the following functions:"
+        "paragraph": "The Wawanesa endpoint supports the following functions:"
     },
     "3.1.2": {
         "table_row": [
@@ -109,7 +109,7 @@
         "table_row": [
             "username",
             "String",
-            "GreenShield username",
+            "Wawanesa username",
             "@groupbenefitz.ca"
         ]
     },
@@ -117,7 +117,7 @@
         "table_row": [
             "password",
             "String",
-            "GreenShield password",
+            "Wawanesa password",
             "S123@"
         ]
     },
@@ -126,1145 +126,778 @@
             "function",
             "String",
             "Operation to be performed",
-            "add-single"
+            "add-family"
         ]
     },
     "4": {
         "heading": "Possible values"
     },
     "4.1": {
-        "heading": "Billing Division and Class Codes"
+        "heading": "Wawanesa Profiles"
     },
     "4.1.1": {
-        "paragraph": "The following codes apply to the BFLX Client Code,The classcodes are provided respective to their billing division number based on those You can select the classcode."
+        "paragraph": "These are the Profiles."
     },
     "4.1.2": {
         "table_row": [
-            "Billing Division",
-            "Class Code",
-            "Package Description"
+            "Profile Name",
+            "Client Code "
         ]
     },
     "4.1.3": {
         "table_row": [
-            "41000",
-            "A",
-            "GROUPBENEFITZ BRONZE - ONTARIO"
+            "4558-EQUATION STAFFING SOLUTIONS INC. ",
+            "VJNE"
         ]
     },
     "4.1.4": {
         "table_row": [
-            "41000",
-            "B",
-            "GROUPBENEFITZ SILVER - ONTARIO"
+            "4673-CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC. ",
+            "SXUU"
         ]
     },
     "4.1.5": {
         "table_row": [
-            "41000",
-            "C",
-            "GROUPBENEFITZ GOLD - ONTARIO"
+            "1097-Alberta Union of Provincial Employees. ",
+            "SKSF"
         ]
     },
-    "4.1.6": {
-        "table_row": [
-            "41000",
-            "D",
-            "GROUPBENEFITZ COPPER - ONTARIO"
-        ]
-    },
-    "4.1.7": {
-        "table_row": [
-            "41000",
-            "E",
-            "GROUPBENEFITZ BRONZE - QUEBEC"
-        ]
-    },
-    "4.1.8": {
-        "table_row": [
-            "41000",
-            "F",
-            "GROUPBENEFITZ SILVER - QUEBEC"
-        ]
-    },
-    "4.1.9": {
-        "table_row": [
-            "41000",
-            "G",
-            "GROUPBENEFITZ GOLD - QUEBEC"
-        ]
-    },
-    "4.1.10": {
-        "table_row": [
-            "41000",
-            "H",
-            "GROUPBENEFITZ BRONZE - BC/MB/SK"
-        ]
-    },
-    "4.1.11": {
-        "table_row": [
-            "41000",
-            "I",
-            "GROUPBENEFITZ SILVER - BC/MB/SK"
-        ]
-    },
-    "4.1.12": {
-        "table_row": [
-            "41000",
-            "K",
-            "GROUPBENEFITZ GOLD - BC/MB/SK"
-        ]
-    },
-    "4.1.13": {
-        "table_row": [
-            "41000",
-            "L",
-            "GROUPBENEFITZ COPPER - BC/MB/SK"
-        ]
-    },
-    "4.1.14": {
-        "table_row": [
-            "41000",
-            "M",
-            "GROUPBENEFITZ BRONZE - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.15": {
-        "table_row": [
-            "41000",
-            "N",
-            "GROUPBENEFITZ SILVER - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.16": {
-        "table_row": [
-            "41000",
-            "O",
-            "GROUPBENEFITZ GOLD - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.17": {
-        "table_row": [
-            "41000",
-            "P",
-            "GROUPBENEFITZ COPPER - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.18": {
-        "table_row": [
-            "41000",
-            "Q",
-            "GROUPBENEFITZ BRONZE - ATLANTIC"
-        ]
-    },
-    "4.1.19": {
-        "table_row": [
-            "41000",
-            "R",
-            "GROUPBENEFITZ SILVER - ATLANTIC"
-        ]
-    },
-    "4.1.20": {
-        "table_row": [
-            "41000",
-            "S",
-            "GROUPBENEFITZ GOLD - ATLANTIC"
-        ]
-    },
-    "4.1.21": {
-        "table_row": [
-            "41000",
-            "T",
-            "GROUPBENEFITZ COPPER - ATLANTIC"
-        ]
-    },
-    "4.1.22": {
-        "table_row": [
-            "41000",
-            "U",
-            "GROUPBENEFITZ SILVER 2025 - ATLANTIC"
-        ]
-    },
-    "4.1.23": {
-        "table_row": [
-            "41000",
-            "V",
-            "GROUPBENEFITZ SILVER 2025 - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.24": {
-        "table_row": [
-            "41000",
-            "W",
-            "GROUPBENEFITZ SILVER 2025 - QUEBEC"
-        ]
-    },
-    "4.1.25": {
-        "table_row": [
-            "41000",
-            "X",
-            "GROUPBENEFITZ SILVER 2025 - ONTARIO"
-        ]
-    },
-    "4.1.26": {
-        "table_row": [
-            "41000",
-            "Y",
-            "GROUPBENEFITZ SILVER 2025 - BC/MB/SK"
-        ]
-    },
-    "4.1.27": {
-        "table_row": [
-            "41001",
-            "A",
-            "GROUPBENEFITZ CLASSIC - BRONZE ONTARIO"
-        ]
-    },
-    "4.1.28": {
-        "table_row": [
-            "41001",
-            "B",
-            "GROUPBENEFITZ CLASSIC - SILVER ONTARIO"
-        ]
-    },
-    "4.1.29": {
-        "table_row": [
-            "41001",
-            "C",
-            "GROUPBENEFITZ CLASSIC - GOLD ONTARIO"
-        ]
-    },
-    "4.1.30": {
-        "table_row": [
-            "41001",
-            "D",
-            "GROUPBENEFITZ CLASSIC - COPPER ONTARIO"
-        ]
-    },
-    "4.1.31": {
-        "table_row": [
-            "41001",
-            "E",
-            "GROUPBENEFITZ CLASSIC - BRONZE QUEBEC"
-        ]
-    },
-    "4.1.32": {
-        "table_row": [
-            "41001",
-            "F",
-            "GROUPBENEFITZ CLASSIC - SILVER QUEBEC"
-        ]
-    },
-    "4.1.33": {
-        "table_row": [
-            "41001",
-            "G",
-            "GROUPBENEFITZ CLASSIC - GOLD QUEBEC"
-        ]
-    },
-    "4.1.34": {
-        "table_row": [
-            "41001",
-            "H",
-            "GROUPBENEFITZ CLASSIC - COPPER QUEBEC"
-        ]
-    },
-    "4.1.35": {
-        "table_row": [
-            "41001",
-            "I",
-            "GROUPBENEFITZ CLASSIC - BRONZE BC/MB/SK"
-        ]
-    },
-    "4.1.36": {
-        "table_row": [
-            "41001",
-            "J",
-            "GROUPBENEFITZ CLASSIC - SILVER BC/MB/SK"
-        ]
-    },
-    "4.1.37": {
-        "table_row": [
-            "41001",
-            "K",
-            "GROUPBENEFITZ CLASSIC - GOLD BC/MB/SK"
-        ]
-    },
-    "4.1.38": {
-        "table_row": [
-            "41001",
-            "L",
-            "GROUPBENEFITZ CLASSIC - COPPER BC/MB/SK"
-        ]
-    },
-    "4.1.39": {
-        "table_row": [
-            "41001",
-            "M",
-            "GROUPBENEFITZ CLASSIC - BRONZE AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.40": {
-        "table_row": [
-            "41001",
-            "N",
-            "GROUPBENEFITZ CLASSIC - SILVER AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.41": {
-        "table_row": [
-            "41001",
-            "O",
-            "GROUPBENEFITZ CLASSIC - GOLD AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.42": {
-        "table_row": [
-            "41001",
-            "P",
-            "GROUPBENEFITZ CLASSIC - COPPER AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.43": {
-        "table_row": [
-            "41001",
-            "Q",
-            "GROUPBENEFITZ CLASSIC - BRONZE ATLANTIC"
-        ]
-    },
-    "4.1.44": {
-        "table_row": [
-            "41001",
-            "R",
-            "GROUPBENEFITZ CLASSIC - SILVER ATLANTIC"
-        ]
-    },
-    "4.1.45": {
-        "table_row": [
-            "41001",
-            "S",
-            "GROUPBENEFITZ CLASSIC - GOLD ATLANTIC"
-        ]
-    },
-    "4.1.46": {
-        "table_row": [
-            "41001",
-            "T",
-            "GROUPBENEFITZ CLASSIC - COPPER ATLANTIC"
-        ]
-    },
-    "4.1.47": {
-        "table_row": [
-            "41001",
-            "U",
-            "GROUPBENEFITZ CLASSIC - SILVER 2025 ATLANTIC"
-        ]
-    },
-    "4.1.48": {
-        "table_row": [
-            "41001",
-            "V",
-            "GROUPBENEFITZ CLASSIC - SILVER 2025 AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.49": {
-        "table_row": [
-            "41001",
-            "W",
-            "GROUPBENEFITZ CLASSIC - SILVER 2025 QUEBEC"
-        ]
-    },
-    "4.1.50": {
-        "table_row": [
-            "41001",
-            "X",
-            "GROUPBENEFITZ CLASSIC - SILVER 2025 ONTARIO"
-        ]
-    },
-    "4.1.51": {
-        "table_row": [
-            "41001",
-            "Y",
-            "GROUPBENEFITZ CLASSIC - SILVER 2025 BC/MB/SK"
-        ]
-    },
-    "4.1.52": {
-        "table_row": [
-            "41002",
-            "BRONZE",
-            "BRONZE PLAN"
-        ]
-    },
-    "4.1.53": {
-        "table_row": [
-            "41002",
-            "GOLD",
-            "GOLD PLAN"
-        ]
-    },
-    "4.1.54": {
-        "table_row": [
-            "41002",
-            "SILVER",
-            "SILVER PLAN"
-        ]
-    },
-    "4.1.55": {
-        "table_row": [
-            "41003",
-            "A",
-            "GROUPBENEFITZ BRONZE - ATLANTIC"
-        ]
-    },
-    "4.1.56": {
-        "table_row": [
-            "41003",
-            "B",
-            "GROUPBENEFITZ BRONZE - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.57": {
-        "table_row": [
-            "41003",
-            "C",
-            "GROUPBENEFITZ BRONZE - ONTARIO"
-        ]
-    },
-    "4.1.58": {
-        "table_row": [
-            "41003",
-            "D",
-            "GROUPBENEFITZ BRONZE - BC/MB/SK"
-        ]
-    },
-    "4.1.59": {
-        "table_row": [
-            "41003",
-            "I",
-            "GROUPBENEFITZ GOLD - ATLANTIC"
-        ]
-    },
-    "4.1.60": {
-        "table_row": [
-            "41003",
-            "J",
-            "GROUPBENEFITZ GOLD - ONTARIO"
-        ]
-    },
-    "4.1.61": {
-        "table_row": [
-            "41003",
-            "K",
-            "GROUPBENEFITZ GOLD - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.62": {
-        "table_row": [
-            "41003",
-            "L",
-            "GROUPBENEFITZ GOLD - BC/MB/SK"
-        ]
-    },
-    "4.1.63": {
-        "table_row": [
-            "41003",
-            "M",
-            "GROUPBENEFITZ SILVER - ATLANTIC"
-        ]
-    },
-    "4.1.64": {
-        "table_row": [
-            "41003",
-            "N",
-            "GROUPBENEFITZ SILVER - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.65": {
-        "table_row": [
-            "41003",
-            "O",
-            "GROUPBENEFITZ SILVER - ONTARIO"
-        ]
-    },
-    "4.1.66": {
-        "table_row": [
-            "41003",
-            "P",
-            "GROUPBENEFITZ SILVER - BC/MB/SK"
-        ]
-    },
-    "4.1.67": {
-        "table_row": [
-            "41003",
-            "Q",
-            "GROUPBENEFITZ SILVER 2025 - ATLANTIC"
-        ]
-    },
-    "4.1.68": {
-        "table_row": [
-            "41003",
-            "R",
-            "GROUPBENEFITZ SILVER 2025 - AB/NU/YU/NWT"
-        ]
-    },
-    "4.1.69": {
-        "table_row": [
-            "41003",
-            "S",
-            "GROUPBENEFITZ SILVER 2025 - ONTARIO"
-        ]
-    },
-    "4.1.70": {
-        "table_row": [
-            "41003",
-            "T",
-            "GROUPBENEFITZ SILVER 2025 - BC/MB/SK"
-        ]
+    "4.2": {
+        "heading": "ESS-Billing Division Number Class Codes "
     },
     "4.2.1": {
-        "paragraph": "In BFRB there is only one billing division - 40000,Class 2-2 is for your GOLD, BRONZE, SILVER packages."
+        "paragraph": "EQUATION STAFFING SOLUTIONS INC Billing Division Number Class Codes"
     },
     "4.2.2": {
         "table_row": [
             "Billing Division",
-            "Class Code",
-            "Package Description"
+            "Client Code",
+            "Package Description "
         ]
     },
     "4.2.3": {
         "table_row": [
-            "40000",
-            "2-2",
-            "GOLD"
+            "1 - OFFICE & MANAGEMENT EMPLOYEES",
+            "01",
+            "ALL ELIGIBLE OFFICE & MANAGEMENT EMPLOYEES"
         ]
     },
     "4.2.4": {
         "table_row": [
-            "40000",
-            "2-2",
-            "BRONZE"
-        ]
-    },
-    "4.2.5": {
-        "table_row": [
-            "40000",
-            "2-2",
-            "SILVER"
+            "2 - OTHER EMPLOYEES.",
+            "02",
+            "ALL OTHER ELIGIBLE EMPLOYEES"
         ]
     },
     "4.3": {
-        "heading": "Province Codes"
+        "heading": "CDHPP-Billing Division Number Class Codes "
     },
     "4.3.1": {
-        "paragraph": "The following lists valid province and state codes."
+        "paragraph": "CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC Billing Division Number Class Codes "
     },
     "4.3.2": {
+        "table_row": [
+            "Billing Division",
+            "Client Code",
+            "Package Description "
+        ]
+    },
+    "4.3.3": {
+        "table_row": [
+            "1 - CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC.",
+            "01",
+            "All Elgible Employees Who Have Selected The Basic "
+        ]
+    },
+    "4.3.4": {
+        "table_row": [
+            "1 - CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC. ",
+            "02",
+            "All Elgible Employees Who Have Selected The Standard "
+        ]
+    },
+    "4.3.4": {
+        "table_row": [
+            "1 - CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC. ",
+            "03",
+            "All Elgible Employees Who Have Selected The Enhanced "
+        ]
+    },
+    "4.4": {
+        "heading": "AUPE-Billing Division Number Class Codes "
+    },
+    "4.4.1": {
+        "paragraph": "ALBERTA UNION OF PROVINCIAL EMPLOYEES Billing Division Number Class Codes"
+    },
+    "4.4.2": {
+        "table_row": [
+            "Billing Division",
+            "Client Code",
+            "Package Description "
+        ]
+    },
+    "4.4.3": {
+        "table_row": [
+            "1 - CANADIAN DENTAL HEALTH PROFESSIONALS PLAN INC.",
+            "01",
+            "All Elgible Employees Who Have Selected The Basic "
+        ]
+    },
+    "4.5": {
+        "heading": "Province Codes"
+    },
+    "4.5.1": {
+        "paragraph": "The following lists valid province and state codes."
+    },
+    "4.5.2": {
         "table_row": [
             "Province/State",
             "Code",
             "Country"
         ]
     },
-    "4.3.3": {
+    "4.5.3": {
         "table_row": [
             "Alberta",
             "AB",
             "Canada"
         ]
     },
-    "4.3.4": {
+    "4.5.4": {
         "table_row": [
             "British Columbia",
             "BC",
             "Canada"
         ]
     },
-    "4.3.5": {
+    "4.5.5": {
         "table_row": [
             "Manitoba",
             "MB",
             "Canada"
         ]
     },
-    "4.3.6": {
+    "4.5.6": {
         "table_row": [
             "New Brunswick",
             "NB",
             "Canada"
         ]
     },
-    "4.3.7": {
+    "4.5.7": {
         "table_row": [
             "Newfoundland and Labrador ",
             "NL",
             "Canada"
         ]
     },
-    "4.3.8": {
+    "4.5.8": {
         "table_row": [
             "Nova Scotia ",
             "NS",
             "Canada"
         ]
     },
-    "4.3.9": {
+    "4.5.9": {
         "table_row": [
             "Ontario",
             "ON",
             "Canada"
         ]
     },
-    "4.3.10": {
+    "4.5.10": {
         "table_row": [
             "Prince Edward Island",
             "AB",
             "Canada"
         ]
     },
-    "4.3.11": {
+    "4.5.11": {
         "table_row": [
             "Quebec",
             "QC",
             "Canada"
         ]
     },
-    "4.3.12": {
+    "4.5.12": {
         "table_row": [
             "Saskatchewan",
             "SK",
             "Canada"
         ]
     },
-    "4.3.13": {
+    "4.5.13": {
         "table_row": [
             "Northwest Territories",
             "NT",
             "Canada"
         ]
     },
-    "4.3.14": {
+    "4.5.14": {
         "table_row": [
             "Nunavut",
             "NT",
             "Canada"
         ]
     },
-    "4.3.15": {
+    "4.5.15": {
         "table_row": [
             "Yukon",
             "NT",
             "Canada"
         ]
     },
-    "4.3.16": {
+    "4.5.16": {
         "table_row": [
             "Alabama",
             "AL",
             "United States Of America"
         ]
     },
-    "4.3.17": {
+    "4.5.17": {
         "table_row": [
             "Alaska",
             "AK",
             "United States Of America"
         ]
     },
-    "4.3.18": {
+    "4.5.18": {
         "table_row": [
             "Arizona",
             "AZ",
             "United States Of America"
         ]
     },
-    "4.3.19": {
+    "4.5.19": {
         "table_row": [
             "Arkansas",
             "AR",
             "United States Of America"
         ]
     },
-    "4.3.20": {
+    "4.5.20": {
         "table_row": [
             "California",
             "CA",
             "United States Of America"
         ]
     },
-    "4.3.21": {
+    "4.5.21": {
         "table_row": [
             "Colorado",
             "CO",
             "United States Of America"
         ]
     },
-    "4.3.22": {
+    "4.5.22": {
         "table_row": [
             "Connecticut",
             "CT",
             "United States Of America"
         ]
     },
-    "4.3.23": {
+    "4.5.23": {
         "table_row": [
             "Florida",
             "FL",
             "United States Of America"
         ]
     },
-    "4.3.24": {
+    "4.5.24": {
         "table_row": [
             "Georgia",
             "GA",
             "United States Of America"
         ]
     },
-    "4.3.25": {
+    "4.5.25": {
         "table_row": [
             "Hawaii",
             "HI",
             "United States Of America"
         ]
     },
-    "4.3.26": {
+    "4.5.26": {
         "table_row": [
             "Idaho",
             "ID",
             "United States Of America"
         ]
     },
-    "4.3.27": {
+    "4.5.27": {
         "table_row": [
             "Illinois",
             "IL",
             "United States Of America"
         ]
     },
-    "4.3.28": {
+    "4.5.28": {
         "table_row": [
             "Indiana",
             "IN",
             "United States Of America"
         ]
     },
-    "4.3.29": {
+    "4.5.29": {
         "table_row": [
             "Lowa",
             "IA",
             "United States Of America"
         ]
     },
-    "4.3.30": {
+    "4.5.30": {
         "table_row": [
             "Kentucky",
             "KY",
             "United States Of America"
         ]
     },
-    "4.3.31": {
+    "4.5.31": {
         "table_row": [
             "Louisiana",
             "LA",
             "United States Of America"
         ]
     },
-    "4.3.32": {
+    "4.5.32": {
         "table_row": [
             "Maine",
             "ME",
             "United States Of America"
         ]
     },
-    "4.3.33": {
+    "4.5.33": {
         "table_row": [
             "Maryland",
             "MD",
             "United States Of America"
         ]
     },
-    "4.3.34": {
+    "4.5.34": {
         "table_row": [
             "Massachusetts",
             "MA",
             "United States Of America"
         ]
     },
-    "4.3.35": {
+    "4.5.35": {
         "table_row": [
             "Michigan",
             "MI",
             "United States Of America"
         ]
     },
-    "4.3.36": {
+    "4.5.36": {
         "table_row": [
             "Mississippi",
             "MS",
             "United States Of America"
         ]
     },
-    "4.3.37": {
+    "4.5.37": {
         "table_row": [
             "Missouri",
             "MO",
             "United States Of America"
         ]
     },
-    "4.3.38": {
+    "4.5.38": {
         "table_row": [
             "Montana",
             "MT",
             "United States Of America"
         ]
     },
-    "4.3.39": {
+    "4.5.39": {
         "table_row": [
             "Nebraska",
             "NE",
             "United States Of America"
         ]
     },
-    "4.3.40": {
+    "4.5.40": {
         "table_row": [
             "New Hampshire",
             "NH",
             "United States Of America"
         ]
     },
-    "4.3.41": {
+    "4.5.41": {
         "table_row": [
             "New Jersey",
             "NJ",
             "United States Of America"
         ]
     },
-    "4.3.42": {
+    "4.5.42": {
         "table_row": [
             "New Mexico",
             "NM",
             "United States Of America"
         ]
     },
-    "4.3.43": {
+    "4.5.43": {
         "table_row": [
             "New York",
             "NY",
             "United States Of America"
         ]
     },
-    "4.3.44": {
+    "4.5.44": {
         "table_row": [
             "North Carolina",
             "NC",
             "United States Of America"
         ]
     },
-    "4.3.45": {
+    "4.5.45": {
         "table_row": [
             "North Dakota",
             "ND",
             "United States Of America"
         ]
     },
-    "4.3.46": {
+    "4.5.46": {
         "table_row": [
             "Ohio",
             "OH",
             "United States Of America"
         ]
     },
-    "4.3.47": {
+    "4.5.47": {
         "table_row": [
             "Oklahoma",
             "OK",
             "United States Of America"
         ]
     },
-    "4.3.48": {
+    "4.5.48": {
         "table_row": [
             "Oregon",
             "OR",
             "United States Of America"
         ]
     },
-    "4.3.49": {
+    "4.5.49": {
         "table_row": [
             "Pennsylvania",
             "PA",
             "United States Of America"
         ]
     },
-    "4.3.50": {
+    "4.5.50": {
         "table_row": [
             "Rhode Island",
             "RI",
             "United States Of America"
         ]
     },
-    "4.3.51": {
+    "4.5.51": {
         "table_row": [
             "South Carolina",
             "SC",
             "United States Of America"
         ]
     },
-    "4.3.52": {
+    "4.5.52": {
         "table_row": [
             "South Dakota",
             "SD",
             "United States Of America"
         ]
     },
-    "4.3.53": {
+    "4.5.53": {
         "table_row": [
             "Tennessee",
             "TN",
             "United States Of America"
         ]
     },
-    "4.3.54": {
+    "4.5.54": {
         "table_row": [
             "Texas",
             "TX",
             "United States Of America"
         ]
     },
-    "4.3.56": {
+    "4.5.56": {
         "table_row": [
             "Utah",
             "UT",
             "United States Of America"
         ]
     },
-    "4.3.57": {
+    "4.5.57": {
         "table_row": [
             "Vermont",
             "VT",
             "United States Of America"
         ]
     },
-    "4.3.58": {
+    "4.5.58": {
         "table_row": [
             "Virginia",
             "VA",
             "United States Of America"
         ]
     },
-    "4.3.59": {
+    "4.5.59": {
         "table_row": [
             "Washington",
             "WA",
             "United States Of America"
         ]
     },
-    "4.3.60": {
+    "4.5.60": {
         "table_row": [
             "West Virginia",
             "WV",
             "United States Of America"
         ]
     },
-    "4.3.61": {
+    "4.5.61": {
         "table_row": [
             "Wisconsin",
             "WI",
             "United States Of America"
         ]
     },
-    "4.3.62": {
+    "4.5.62": {
         "table_row": [
             "Wyoming",
             "WY",
             "United States Of America"
         ]
     },
-    "4.4": {
+    "4.6": {
         "heading": "Country"
     },
-    "4.4.1": {
+    "4.6.1": {
         "paragraph": "Possible values for country"
     },
-    "4.4.2": {
+    "4.6.2": {
         "table_row": [
             "Country",
             "Codes"
         ]
     },
-    "4.4.3": {
+    "4.6.3": {
         "table_row": [
             "Canada",
             "CA"
         ]
     },
-    "4.4.4": {
+    "4.6.4": {
         "table_row": [
             "United States Of America",
             "USA"
         ]
     },
-    "4.4.5": {
+    "4.6.5": {
         "table_row": [
             "Other",
             "--"
         ]
     },
-    "4.5": {
+    "4.7": {
         "heading": "Languages"
     },
-    "4.5.1": {
+    "4.7.1": {
         "paragraph": "The following values are supported for the language field:"
     },
-    "4.5.2": {
+    "4.7.2": {
         "table_row": [
             "Language",
             "Codes"
         ]
     },
-    "4.5.3": {
+    "4.7.3": {
         "table_row": [
             "English",
             "EN"
         ]
     },
-    "4.5.4": {
+    "4.7.4": {
         "table_row": [
             "French",
             "FR"
         ]
     },
-    "4.6": {
+    "4.8": {
         "heading": "Gender Codes"
     },
-    "4.6.1": {
+    "4.8.1": {
         "paragraph": "The following values are supported for gender:"
     },
-    "4.6.2": {
+    "4.8.2": {
         "table_row": [
             "Gender",
             "Codes"
         ]
     },
-    "4.6.3": {
+    "4.8.3": {
         "table_row": [
             "Male",
             "M"
         ]
     },
-    "4.6.4": {
+    "4.8.4": {
         "table_row": [
             "Female",
             "F"
         ]
     },
-    "4.6.5": {
+    "4.8.5": {
         "table_row": [
             "Undisclosed",
             "U"
         ]
     },
-    "4.6.6": {
+    "4.8.6": {
         "table_row": [
             "Non-binary",
             "NB"
         ]
     },
-    "4.7": {
+    "4.9": {
+        "heading": "Earning Frequency "
+    },
+    "4.9.1": {
+        "paragraph": "Possible values for Earning Frequency"
+    },
+    "4.9.2": {
+        "table_row": [
+            "Salary Type",
+            "Codes"
+        ]
+    },
+    "4.9.3": {
+        "table_row": [
+            "Annual",
+            "AN"
+        ]
+    },
+    "4.9.4": {
+        "table_row": [
+            "Monthly",
+            "MO"
+        ]
+    },
+    "4.9.5": {
+        "table_row": [
+            "BI-Weekly",
+            "BI"
+        ]
+    },
+    "4.9.6": {
+        "table_row": [
+            "Weekly",
+            "WK"
+        ]
+    },
+    "4.9.7": {
+        "table_row": [
+            "Hourly",
+            "HR"
+        ]
+    },
+    "4.10": {
         "heading": "Employment Status"
     },
-    "4.7.1": {
+    "4.10.1": {
         "paragraph": "Possible values for Employment Status"
     },
-    "4.7.2": {
+    "4.10.2": {
         "table_row": [
             "Status Type",
             "Description"
         ]
     },
-    "4.7.3": {
+    "4.10.3": {
         "table_row": [
             "Active",
             "The person is currently employed and working."
         ]
     },
-    "4.7.4": {
+    "4.10.4": {
         "table_row": [
             "Adult Dependent",
             "An adult (usually 18+) who depends on the employee for support (e.g., spouse, dependent child over 18)."
         ]
     },
-    "4.7.5": {
+    "4.10.5": {
         "table_row": [
             "Other Adult Dependent",
             "A dependent adult who doesn’t fit standard categories (e.g., extended family member under care)."
         ]
     },
-    "4.7.6": {
+    "4.10.6": {
         "table_row": [
             "Retiree",
             "A former employee who has retired but may still receive benefits."
         ]
     },
-    "4.7.7": {
+    "4.10.7": {
         "table_row": [
             "Surviving Spouse",
             "The spouse of a deceased employee who continues to receive benefits."
         ]
     },
-    "4.7.8": {
+    "4.10.8": {
         "table_row": [
             "Other Survivor",
             "Another eligible survivor (not spouse), such as a child or dependent of a deceased employee."
         ]
     },
-    "4.7.9": {
+    "4.10.9": {
         "table_row": [
             "Other",
             "A catch-all category for cases that don’t fit the above options."
         ]
     },
-    "4.8": {
+    "4.11": {
         "heading": "Extended Health Coverage"
     },
-    "4.8.1": {
+    "4.11.1": {
         "paragraph": "Possible values for Extended Health Coverage"
     },
-    "4.8.2": {
+    "4.11.2": {
         "table_row": [
             "Extended Health Coverage Type",
             "Description"
         ]
     },
-    "4.8.3": {
+    "4.11.3": {
         "table_row": [
             "Single (Plan Member Only)",
             "Coverage applies only to the employee/member."
         ]
     },
-    "4.8.4": {
+    "4.11.4": {
         "table_row": [
             "Plan Members",
             "Usually refers to all eligible members within a defined group (can vary by system, but often similar to employee-only or grouped members under the same plan)."
         ]
     },
-    "4.8.5": {
+    "4.11.5": {
         "table_row": [
             "Spouse and Dependents",
             "Covers the member’s spouse and children/dependents (may or may not include the member depending on system design, but often implies family coverage)."
         ]
     },
-    "4.8.6": {
+    "4.11.6": {
         "table_row": [
             "Plan Member and Anyone Dependent",
             "Covers the member plus all eligible dependents (spouse, children, etc.)."
         ]
     },
-    "4.8.7": {
+    "4.11.7": {
         "table_row": [
             "Waived / Opted Out",
             "The member has chosen not to take this coverage."
         ]
     },
-    "4.8.8": {
+    "4.11.8": {
         "table_row": [
             "Not Eligible",
             "The member does not qualify for this coverage."
@@ -1283,21 +916,21 @@
             "Description"
         ]
     },
-    "5.1.3": {
+    "5.1.2": {
         "table_row": [
             "policy",
             "JSON Object",
             "policy information(Refer to the tables below)"
         ]
     },
-    "5.1.4": {
+    "5.1.3": {
         "table_row": [
             "address",
             "JSON Object",
             "address information(Refer to the tables below)"
         ]
     },
-    "5.1.6": {
+    "5.1.4": {
         "table_row": [
             "contact",
             "JSON Object",
@@ -1305,25 +938,42 @@
         ]
     },
     
-    "5.1.7": {
+    "5.1.5": {
         "table_row": [
             "coverage",
             "JSON Object",
             "coverage information(Refer to the tables below)"
         ]
     },
-    "5.1.8": {
+    "5.1.6": {
         "table_row": [
             "personal",
             "JSON Object",
             "personal information(Refer to the tables below)"
         ]
     },
-    "5.1.9": {
+    "5.1.7": {
         "table_row": [
             "employment",
             "JSON Object",
             "employment information(Refer to the tables below)"
+        ]
+    },
+    "5.1.8": {
+        "paragraph": "A member beneficiary must be provided under the enrollment section."
+    },
+    "5.1.9": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "5.1.10": {
+        "table_row": [
+            "beneficiaries",
+            "JSON Object",
+            "Member beneficiaries information(Refer to the tables below)"
         ]
     },
     "5.2": {
@@ -1777,8 +1427,17 @@
             "Click Here"
         ]
     },
+    "5.7.12": {
+        "table_row": [
+            "employment.salaryType1",
+            "String",
+            "Yes",
+            "Earning Frequency of employe",
+            "Click Here"
+        ]
+    },
     "5.8": {
-        "heading": "Response-Success"
+        "heading": "beneficiaries object"
     },
     "5.8.1": {
         "table_row": [
@@ -1791,6 +1450,81 @@
     },
     "5.8.2": {
         "table_row": [
+            "birthDate ",
+            "Date ",
+            "Yes ",
+            "Date of birth of member ",
+            "04/0X/20XX "
+        ]
+    },
+    "5.8.3": {
+        "table_row": [
+            "allocation ",
+            "Integer ",
+            "Yes",
+            "Percentage of allocation ",
+            "100.00% "
+        ]
+    },
+    "5.8.4": {
+        "table_row": [
+            "gender ",
+            "String",
+            "Yes",
+            "Gender",
+            "Click Here"
+        ]
+    },
+    "5.8.5": {
+        "table_row": [
+            "relationship",
+            "String",
+            "Yes",
+            "Relation with member ",
+            "Spouse/children"
+        ]
+    },
+    "5.8.6": {
+        "table_row": [
+            "beneficiaryName ",
+            "String",
+            "Yes ",
+            "beneficiaryName",
+            "BLI "
+        ]
+    },
+    "5.8.7": {
+        "table_row": [
+            "beneficiaryTypeCode ",
+            "String",
+            "Yes",
+            "--",
+            "--"
+        ]
+    },
+    "5.8.8": {
+        "table_row": [
+            "irrevocableIndicator",
+            "Boolean",
+            "Yes ",
+            "Not able to be changed ",
+            "Yes/No"
+        ]
+    },
+    "5.9": {
+        "heading": "Response-Success"
+    },
+    "5.9.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "5.9.2": {
+        "table_row": [
             "subscriberId",
             "String",
             "Yes",
@@ -1798,10 +1532,10 @@
             "19XXXXXX"
         ]
     },
-    "5.9": {
+    "5.10": {
         "heading": "Response-ERROR-1"
     },
-    "5.9.1": {
+    "5.10.1": {
         "paragraph": "No Plan Member was found with the identifier"
     },
     "6": {
@@ -1865,6 +1599,23 @@
             "dependents",
             "JSON Object",
             "dependents information(Refer to the tables below)"
+        ]
+    },
+    "6.1.9": {
+        "paragraph": "A member beneficiary must be provided under the enrollment section."
+    },
+    "6.1.10": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Description"
+        ]
+    },
+    "6.1.11": {
+        "table_row": [
+            "beneficiaries",
+            "JSON Object",
+            "Member beneficiaries information(Refer to the tables below)"
         ]
     },
     "6.2": {
@@ -1982,8 +1733,47 @@
             "04/04/20XX"
         ]
     },
-    "6.5": {
+    "6.4": {
         "heading": "contact object"
+    },
+    "6.4.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.4.2": {
+        "table_row": [
+            "email",
+            "String",
+            "Yes",
+            "Primary email address of the member",
+            "Abc.doe@gmail.com"
+        ]
+    },
+    "6.4.3": {
+        "table_row": [
+            "homePhone",
+            "String",
+            "No",
+            "Home phone number",
+            "+1 (416) 555-1234"
+        ]
+    },
+    "6.4.4": {
+        "table_row": [
+            "extension",
+            "Integer",
+            "No",
+            "Phone extension (2–6 digit internal number)",
+            "8769"
+        ]
+    },
+    "6.5": {
+        "heading": "coverage object"
     },
     "6.5.1": {
         "table_row": [
@@ -1996,33 +1786,96 @@
     },
     "6.5.2": {
         "table_row": [
-            "email",
+            "familyStatus",
             "String",
             "Yes",
-            "Primary email address of the member",
-            "Abc.doe@gmail.com"
+            "Coverage type(S-Single,F1-Family,C2-Couple,).",
+            "S"
         ]
     },
     "6.5.3": {
         "table_row": [
-            "homePhone",
-            "String",
-            "No",
-            "Home phone number",
-            "+1 (416) 555-1234"
+            "effectiveDate",
+            "Date (MM-DD-YYYY)",
+            "Yes",
+            "Coverage start date",
+            "04/04/20XX"
         ]
     },
     "6.5.4": {
         "table_row": [
-            "extension",
-            "Integer",
+            "overrideCoverage",
+            "String",
             "No",
-            "Phone extension (2–6 digit internal number)",
-            "8769"
+            "overriding the existing coverage",
+            ""
+        ]
+    },
+    "6.5.5": {
+        "table_row": [
+            "lateEntranceIndicator",
+            "Boolean",
+            "No",
+            "Indicates late enrollment",
+            "true/false"
+        ]
+    },
+    "6.5.6": {
+        "table_row": [
+            "lateEntranceStartDate",
+            "Date (MM-DD-YYYY)",
+            "No",
+            "Late entrance effective date",
+            "04/06/20XX"
+        ]
+    },
+    "6.5.8": {
+        "table_row": [
+            "nihbElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates NIHB election status",
+            "true/false"
+        ]
+    },
+    "6.5.9": {
+        "table_row": [
+            "ramqElectionIndicator",
+            "Boolean",
+            "No",
+            "Indicates RAMQ election status",
+            "true/false"
+        ]
+    },
+    "6.5.10": {
+        "table_row": [
+            "extendedHealthCoverage",
+            "String",
+            "No",
+            "Specifies the level of extended health coverage provided to the member",
+            "Click Here"
+        ]
+    },
+    "6.5.11": {
+        "table_row": [
+            "psaContributionDeposit",
+            "String",
+            "No",
+            "It comes under the Member coverage",
+            "--"
+        ]
+    },
+    "6.5.12": {
+        "table_row": [
+            "hcsaContributionDeposit",
+            "Number",
+            "No",
+            "It comes under the Member coverage",
+            "--"
         ]
     },
     "6.6": {
-        "heading": "coverage object"
+        "heading": "personal object"
     },
     "6.6.1": {
         "table_row": [
@@ -2035,96 +1888,87 @@
     },
     "6.6.2": {
         "table_row": [
-            "familyStatus",
+            "firstName",
             "String",
             "Yes",
-            "Coverage type(S-Single,F1-Family,C2-Couple,).",
-            "S"
+            "Member's First name",
+            "JOHN"
         ]
     },
     "6.6.3": {
         "table_row": [
-            "effectiveDate",
-            "Date (MM-DD-YYYY)",
-            "Yes",
-            "Coverage start date",
-            "04/04/20XX"
+            "middleName",
+            "String",
+            "No",
+            "Member's middle name",
+            "K"
         ]
     },
     "6.6.4": {
         "table_row": [
-            "overrideCoverage",
+            "lastName",
             "String",
-            "No",
-            "overriding the existing coverage",
-            ""
+            "Yes",
+            "Members lastname",
+            "Dil"
         ]
     },
     "6.6.5": {
         "table_row": [
-            "lateEntranceIndicator",
-            "Boolean",
-            "No",
-            "Indicates late enrollment",
-            "true/false"
+            "birthDate",
+            "Date (MM-DD-YYYY)",
+            "Yes",
+            "Date of birth of member",
+            "04/0X/20XX"
         ]
     },
     "6.6.6": {
         "table_row": [
-            "lateEntranceStartDate",
-            "Date (MM-DD-YYYY)",
+            "gender",
+            "string",
+            "Yes",
+            "Gender",
+            "Click Here"
+        ]
+    },
+    "6.6.7": {
+        "table_row": [
+            "suffix",
+            "String",
             "No",
-            "Late entrance effective date",
-            "04/06/20XX"
+            "A set of letters added to end of surname.",
+            "Jr,Mr,Mrs"
         ]
     },
     "6.6.8": {
         "table_row": [
-            "nihbElectionIndicator",
-            "Boolean",
-            "No",
-            "Indicates NIHB election status",
-            "true/false"
+            "language",
+            "String",
+            "Yes",
+            "Preferred communication language of the member(EN,FR).",
+            "EN"
         ]
     },
     "6.6.9": {
         "table_row": [
-            "ramqElectionIndicator",
-            "Boolean",
+            "salutation",
+            "String",
             "No",
-            "Indicates RAMQ election status",
-            "true/false"
+            "A format title indicate professional standing.",
+            "Mr,Ms"
         ]
     },
     "6.6.10": {
         "table_row": [
-            "extendedHealthCoverage",
-            "String",
+            "smokerIndicator",
+            "Boolean",
             "No",
-            "Specifies the level of extended health coverage provided to the member",
-            "Click Here"
-        ]
-    },
-    "6.6.11": {
-        "table_row": [
-            "psaContributionDeposit",
-            "String",
-            "No",
-            "It comes under the Member coverage",
-            "--"
-        ]
-    },
-    "6.6.12": {
-        "table_row": [
-            "hcsaContributionDeposit",
-            "Number",
-            "No",
-            "It comes under the Member coverage",
-            "--"
+            "Indicates if member is smoker",
+            "true/false"
         ]
     },
     "6.7": {
-        "heading": "personal object"
+        "heading": "employment Object"
     },
     "6.7.1": {
         "table_row": [
@@ -2137,99 +1981,6 @@
     },
     "6.7.2": {
         "table_row": [
-            "firstName",
-            "String",
-            "Yes",
-            "Member's First name",
-            "JOHN"
-        ]
-    },
-    "6.7.3": {
-        "table_row": [
-            "middleName",
-            "String",
-            "No",
-            "Member's middle name",
-            "K"
-        ]
-    },
-    "6.7.4": {
-        "table_row": [
-            "lastName",
-            "String",
-            "Yes",
-            "Members lastname",
-            "Dil"
-        ]
-    },
-    "6.7.5": {
-        "table_row": [
-            "birthDate",
-            "Date (MM-DD-YYYY)",
-            "Yes",
-            "Date of birth of member",
-            "04/0X/20XX"
-        ]
-    },
-    "6.7.6": {
-        "table_row": [
-            "gender",
-            "string",
-            "Yes",
-            "Gender",
-            "Click Here"
-        ]
-    },
-    "6.7.7": {
-        "table_row": [
-            "suffix",
-            "String",
-            "No",
-            "A set of letters added to end of surname.",
-            "Jr,Mr,Mrs"
-        ]
-    },
-    "6.7.8": {
-        "table_row": [
-            "language",
-            "String",
-            "Yes",
-            "Preferred communication language of the member(EN,FR).",
-            "EN"
-        ]
-    },
-    "6.7.9": {
-        "table_row": [
-            "salutation",
-            "String",
-            "No",
-            "A format title indicate professional standing.",
-            "Mr,Ms"
-        ]
-    },
-    "6.7.10": {
-        "table_row": [
-            "smokerIndicator",
-            "Boolean",
-            "No",
-            "Indicates if member is smoker",
-            "true/false"
-        ]
-    },
-    "6.8": {
-        "heading": "employment Object"
-    },
-    "6.8.1": {
-        "table_row": [
-            "Parameter",
-            "Data Type",
-            "Required",
-            "Description",
-            "Example"
-        ]
-    },
-    "6.8.2": {
-        "table_row": [
             "salary",
             "Number",
             "No",
@@ -2237,7 +1988,7 @@
             "60000"
         ]
     },
-    "6.8.3": {
+    "6.7.3": {
         "table_row": [
             "hireDate",
             "Date (MM-DD-YYYY)",
@@ -2246,7 +1997,7 @@
             "04/04/20XX"
         ]
     },
-    "6.8.4": {
+    "6.7.4": {
         "table_row": [
             "jobTitle",
             "String",
@@ -2255,7 +2006,7 @@
             "IT"
         ]
     },
-    "6.8.5": {
+    "6.7.5": {
         "table_row": [
             "classCode",
             "String",
@@ -2264,7 +2015,7 @@
             "Click Here"
         ]
     },
-    "6.8.6": {
+    "6.7.6": {
         "table_row": [
             "sinNumber",
             "String",
@@ -2273,7 +2024,7 @@
             "8786875"
         ]
     },
-    "6.8.7": {
+    "6.7.7": {
         "table_row": [
             "alternateId",
             "String",
@@ -2282,7 +2033,7 @@
             "654358"
         ]
     },
-    "6.8.8": {
+    "6.7.8": {
         "table_row": [
             "workHoursPerWeek",
             "String",
@@ -2291,7 +2042,7 @@
             "40"
         ]
     },
-    "6.8.9": {
+    "6.7.9": {
         "table_row": [
             "billingDivisionNumber",
             "String",
@@ -2300,7 +2051,7 @@
             "Click Here"
         ]
     },
-    "6.8.10": {
+    "6.7.10": {
         "table_row": [
             "employmentProvinceCode",
             "String",
@@ -2310,7 +2061,7 @@
 
         ]
     },
-    "6.8.11": {
+    "6.7.11": {
         "table_row": [
             "employmentStatusTypeCode",
             "String",
@@ -2319,13 +2070,13 @@
             "Click Here"
         ]
     },
-    "6.9": {
+    "6.8": {
         "heading": "Dependents object"
     },
-    "6.9.1": {
+    "6.8.1": {
         "heading": "spouse"
     },
-    "6.9.2": {
+    "6.8.2": {
         "table_row": [
             "Parameter",
             "Data Type",
@@ -2334,7 +2085,7 @@
             "Example"
         ]
     },
-    "6.9.3": {
+    "6.8.3": {
         "table_row": [
             "emails",
             "JSON Object",
@@ -2343,7 +2094,7 @@
             "{emailAddress:abc@aitestpro.com,effectiveDate:2026-02-01,emailTypeCode:WB }"
         ]
     },
-    "6.9.4": {
+    "6.8.4": {
         "table_row": [
             "emailAddress",
             "String",
@@ -2352,7 +2103,7 @@
             "Abc.doe@gmail.com"
         ]
     },
-    "6.9.5": {
+    "6.8.5": {
         "table_row": [
             "effectiveDate",
             "Date (MM-DD-YYYY)",
@@ -2361,16 +2112,16 @@
             "04/03/XXXX"
         ]
     },
-    "6.9.6": {
+    "6.8.6": {
         "table_row": [
             "emailTypeCode",
             "String",
             "No",
             "Enter the Email code for the spouse",
-            "04/03/XXXX"
+            "A1A 1A1"
         ]
     },
-    "6.9.7": {
+    "6.8.7": {
         "table_row": [
             "phones",
             "JSON Object",
@@ -2379,7 +2130,7 @@
             "{phoneNumber:1234567890 ,effectiveDate:2026-02-01,phoneTypeCode:CE,phoneExtension:null}"
         ]
     },
-    "6.9.8": {
+    "6.8.8": {
         "table_row": [
             "homePhone",
             "String",
@@ -2388,7 +2139,7 @@
             "+1 (416) 555-1234"
         ]
     },
-    "6.9.9": {
+    "6.8.9": {
         "table_row": [
             "effectiveDate",
             "Date (MM-DD-YYYY)",
@@ -2397,16 +2148,16 @@
             "04/03/XXXX"
         ]
     },
-    "6.9.10": {
+    "6.8.10": {
         "table_row": [
             "phoneTypeCode",
             "String",
             "No",
             "If spouse has Phone-no provide it",
-            "7654XXXXX"
+            "+1"
         ]
     },
-    "6.9.11": {
+    "6.8.11": {
         "table_row": [
             "effectiveDate",
             "Date (MM-DD-YYYY)",
@@ -2415,7 +2166,7 @@
             "04/03/XXXX"
         ]
     },
-    "6.9.12": {
+    "6.8.12": {
         "table_row": [
             "gender",
             "String",
@@ -2596,7 +2347,7 @@
             "JSON Object",
             "No",
             "If children has Phone-no fill the following fields",
-            "{phoneNumber:1234567890,effectiveDate:2026-02-01,phoneTypeCode:CE,phoneExtension:null}"
+            "{phoneNumber: +1 416 555 0199 ,effectiveDate:2026-02-01,phoneTypeCode:CE,phoneExtension:null}"
         ]
     },
     "6.10.7": {
@@ -2762,6 +2513,81 @@
             "true/false"
         ]
     },
+    "6.11": {
+        "heading": "beneficiaries object"
+    },
+    "6.11.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.11.2": {
+        "table_row": [
+            "birthDate ",
+            "Date ",
+            "Yes ",
+            "Date of birth of member ",
+            "04/0X/20XX "
+        ]
+    },
+    "6.11.3": {
+        "table_row": [
+            "allocation ",
+            "Integer ",
+            "Yes",
+            "Percentage of allocation ",
+            "100.00% "
+        ]
+    },
+    "6.11.4": {
+        "table_row": [
+            "gender ",
+            "String",
+            "Yes",
+            "Gender",
+            "Click Here"
+        ]
+    },
+    "6.11.5": {
+        "table_row": [
+            "relationship",
+            "String",
+            "Yes",
+            "Relation with member ",
+            "Spouse/children"
+        ]
+    },
+    "6.11.6": {
+        "table_row": [
+            "beneficiaryName ",
+            "String",
+            "Yes ",
+            "beneficiaryName",
+            "BLI "
+        ]
+    },
+    "6.11.7": {
+        "table_row": [
+            "beneficiaryTypeCode ",
+            "String",
+            "Yes",
+            "--",
+            "--"
+        ]
+    },
+    "6.11.8": {
+        "table_row": [
+            "irrevocableIndicator",
+            "Boolean",
+            "Yes ",
+            "Not able to be changed ",
+            "Yes/No"
+        ]
+    },
     "7": {
         "heading": "Function- search-member"
     },
@@ -2854,7 +2680,7 @@
             "String[]",
             "No",
             "identifies the specific division where the employee belongs or member belongs",
-            "41000"
+            "Click Here"
         ]
     },
     "7.2.9": {
@@ -2968,16 +2794,16 @@
         "heading": "Appendix"
     },
     "9.1.1": {
-        "paragraph": "Example GreenShield add-single payload"
+        "paragraph": "Example Wawanesa add-single payload"
     },
     "9.1.2": {
-        "paragraph": "Example GreenShield add-family payload"
+        "paragraph": "Example Wawanesa add-family payload"
     },
     "9.1.3": {
-        "paragraph": "Example GreenShield search-member payload"
+        "paragraph": "Example Wawanesa search-member payload"
     },
     "9.1.4": {
-        "paragraph": "Example GreenShield terminate payload"
+        "paragraph": "Example Wawanesa terminate payload"
     },
     "10": {
         "Footer": "Ideabytes Inc. Suite 580, 1000  Innovation Drive, Kanata, Ottawa, ON K2K 3E7"

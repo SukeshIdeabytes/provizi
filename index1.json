@@ -1798,23 +1798,18 @@
             "19XXXXXX"
         ]
     },
+    "5.9": {
+        "heading": "Response-ERROR-1"
+    },
     "5.9.1": {
-        "paragraph": ""
+        "paragraph": "No Plan Member was found with the identifier"
     },
     "5.10": {
         "heading": "Response-ERROR-2"
     },
     "5.10.1": {
-        "paragraph": ""
+        "paragraph": "--"
     },
-    "5.11": {
-        "heading": "Response-ERROR-3"
-    },
-    "5.11.1": {
-        "paragraph": ""
-    },
-
-    
     "6": {
         "heading": "Function- add-family"
     },

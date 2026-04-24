@@ -606,8 +606,15 @@
                 panel.appendChild(req);
 
                 let table = null;
+
+
+                let keys_ = ['5.8', '5.8.1', '5.8.2','5.9','5.9.1', '5.10', '5.10.1']
+
+                
                 keys.forEach(key => {
                     if (key !== startKey && !key.startsWith(startKey + ".")) return;
+
+                    if(keys_.includes(key)) return;
                     const item = data[key];
                     if (!item) return;
                     if (item.heading) {
@@ -724,6 +731,7 @@
                     }
 
                 });
+               
                 const responseCode = document.createElement("div");
                 responseCode.className = "response-section";
                 responseCode.innerHTML = `
@@ -775,6 +783,7 @@
                 `;
 
                 const resContent = document.createElement("div");
+                const reqHolder = document.createElement("div");
                 resContent.className = "section-content";
                 resContent.style.display = "none";
                 resHeader.onclick = () => {
@@ -787,11 +796,133 @@
                 };
 
                 resSection.appendChild(resHeader);
-                //   resSection.appendChild(resContent);
-                //   resContent.appendChild(responseHolder);
+
+                resSection.appendChild(resContent);
 
                 panel.appendChild(resSection);
                 panel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+
+                  keys.forEach(key => {
+                    console.log(key, startKey)
+                    if (!keys_.includes(key)) return;
+                    const item = data[key];
+                    if (!item) return;
+                    if (item.heading) {
+
+                        if (item.heading.startsWith("Response")) {
+
+                            const h = document.createElement("div");
+                            h.className = "section-title";
+                            h.id = item.heading;
+                            h.innerText = item.heading;
+
+                            resContent.appendChild(h); //  important
+
+                            table = null;
+                            return;
+                        }
+
+                        // NORMAL FLOW
+                        const h = document.createElement("div");
+                        h.className = "section-title";
+                        h.id = item.heading;
+                        h.innerText = item.heading;
+
+                        resContent.appendChild(h);
+                        table = null;
+                    }
+
+                    if (item.paragraph) {
+                        const p = document.createElement("p");
+                        p.innerText = item.paragraph;
+                        resContent.appendChild(p);
+
+                    }
+
+                    if (item.example) {
+                        const ex = document.createElement("p");
+                        ex.style.color = "#1a7ea3";
+                        ex.style.fontStyle = "italic";
+                        ex.innerText = item.example;
+                        resContent.appendChild(ex);
+
+                    }
+
+                    if (item.table_row) {
+                        if (!table) {
+                            table = document.createElement("table");
+                            table.style.width = "100%";
+                            table.style.borderCollapse = "collapse";
+                            resContent.appendChild(table);
+                        }
+
+                        const tr = document.createElement("tr");
+                        item.table_row.forEach((cell, index) => {
+
+                            const isHeader = !table.querySelector("tr");
+                            const td = document.createElement(isHeader ? "th" : "td");
+
+
+                            if (COUNTRY_KEYS.includes(key)) {
+                                if (index === item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${COUNTRY_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (PROVINCE_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${PROVINCE_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (COVERAGE_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${COVERAGE_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (GENDER_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${GENDER_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (DIVISION_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${DIVISION_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else if (EMPLOYMENT_KEYS.includes(key)) {
+                                if (index == item.table_row.length - 1) {
+                                    td.innerHTML = `<a href="${EMPLOYMENT_LINK}" class="click">${cell}</a>`;
+                                } else {
+                                    td.innerText = cell;
+                                }
+                            }
+                            else {
+                                td.innerText = cell;
+                            }
+
+                            // td.innerText = cell;
+                            td.style.border = TABLE_STYLES.border;
+                            td.style.padding = TABLE_STYLES.padding;
+                            tr.appendChild(td);
+
+                        });
+
+                        table.appendChild(tr);
+
+                    }
+
+                });
+               
 
             }
 

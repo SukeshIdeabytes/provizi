@@ -61,3 +61,7 @@ version 0.0.15
 version 0.0.16
 1.In main code html and js the hardcoded values moved into constant.js
 2.In reqest json box the json code chnages for different functions.
+24-04-2026
+version 0.0.17
+1.added the wawanesa.json to render the data of wawanesa added png image.
+2.added logic for the response to render each function response 

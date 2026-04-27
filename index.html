@@ -359,12 +359,12 @@
         <div class="logo">
             <img src="Pro-Vizi hires no back (1).png" alt="logo">
         </div>
-        
+
     </div>
     <div class="container">
         <div class="sidebar" id="sidebar"></div>
         <div class="content">
-            <img src="wawanesa.png" style="height:40px;" alt="logo">
+            <img src="feewfwef.png" style="height:40px;" alt="logo">
             <div class="title"> API Integration Guide</div>
             <div class="info-card" id="info-card"></div>
 
@@ -378,7 +378,7 @@
         let keys = [];
 
         // Load data from index.json
-        fetch("wawanesa.json")
+        fetch("index1.json")
             .then(response => response.json())
             .then(json => {
                 data = json;
@@ -564,6 +564,10 @@
 
                 const fnKey = getFunctionKey(startKey, data);
                 const requestBody = REQUEST_BODIES[fnKey] || "{}";
+                const responses = RESPONSE_MAP[fnKey] || {
+                    success: "{}",
+                    error1: "{}"
+                };
 
                 codeWrap.innerHTML = `<div class="request-header">
                     <span class="label">Request:</span>
@@ -610,9 +614,7 @@
                 let table = null;
 
 
-                const keys_ = keys.filter(key =>
-                    /^5\.(8|9|10)(\..+)?$/.test(key)
-                );
+                var keys_ = getResponseKeys(keys);
 
 
                 keys.forEach(key => {
@@ -719,6 +721,13 @@
                                     td.innerText = cell;
                                 }
                             }
+                            // else if (EARNING_KEYS.includes(key)) {
+                            //     if (index == item.table_row.length - 1) {
+                            //         td.innerHTML = `<a href="${EARNING_LINK}" class="click">${cell}</a>`;
+                            //     } else {
+                            //         td.innerText = cell;
+                            //     }
+                            // }
                             else {
                                 td.innerText = cell;
                             }
@@ -751,7 +760,7 @@
                                 <button class="copy-btn">
                                     <i class="fa-solid fa-copy"></i>
                                     </button>
-                                    <pre>${SUCCESS_RESPONSE}</pre>
+                                    <pre>${responses.success}</pre>
                                     </div>
                                     </div>`;
 
@@ -761,20 +770,17 @@
                     tab.addEventListener("click", () => {
                         tabs.forEach(t => t.classList.remove("active"));
                         tab.classList.add("active");
+
                         const pre = responseCode.querySelector("pre");
+
                         if (tab.textContent === "Success") {
-                            pre.textContent = `${SUCCESS_RESPONSE}`;
-
+                            pre.textContent = responses.success;
                         }
+
                         if (tab.textContent === "Error-1") {
-                            pre.textContent = `${ERROR1_RESPONSE}`;
-
+                            pre.textContent = responses.error1;
                         }
-                        // if (tab.textContent === "Error-2") { pre.textContent = ``; }
-                    
-
                     });
-
                 });
 
                 const resSection = document.createElement("div");
@@ -808,7 +814,10 @@
 
                 keys.forEach(key => {
                     console.log(key, startKey)
-                    if (!keys_.includes(key)) return;
+                    if (
+                        !keys_.includes(key) ||
+                        !(key === startKey || key.startsWith(startKey + "."))
+                    ) return;
                     const item = data[key];
                     if (!item) return;
                     if (item.heading) {

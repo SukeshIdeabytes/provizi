@@ -1794,7 +1794,7 @@
             "subscriberId",
             "String",
             "Yes",
-            "Customer Subscriber ID was created by successful response",
+            "Customer Subscriber ID was created by successful response for add-single",
             "19XXXXXX"
         ]
     },
@@ -1802,7 +1802,7 @@
         "heading": "Response-ERROR-1"
     },
     "5.9.1": {
-        "paragraph": "No Plan Member was found with the identifier"
+        "paragraph": "Invalid language code entered"
     },
     "6": {
         "heading": "Function- add-family"
@@ -2762,6 +2762,33 @@
             "true/false"
         ]
     },
+    "6.11": {
+        "heading": "Response-Success"
+    },
+    "6.11.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "6.11.2": {
+        "table_row": [
+            "subscriberId",
+            "String",
+            "Yes",
+            "Customer Subscriber ID was created by successful response for function add-family",
+            "19XXXXXX"
+        ]
+    },
+    "6.12": {
+        "heading": "Response-ERROR-1"
+    },
+    "6.12.1": {
+        "paragraph": "Entered Invalid language code,Familystatuscode"
+    },
     "7": {
         "heading": "Function- search-member"
     },
@@ -2866,6 +2893,45 @@
             "Active"
         ]
     },
+    "7.3": {
+        "heading": "Response-Success"
+    },
+    "7.3.1": {
+        "table_row": [
+            "Parameter",
+            "Data Type",
+            "Required",
+            "Description",
+            "Example"
+        ]
+    },
+    "7.3.2": {
+        "table_row": [
+            "totalCount",
+            "Number",
+            "Yes",
+            "The count of searched members",
+            "1"
+        ]
+    },
+    "7.3.3": {
+        "table_row": [
+            "results",
+            "JSON Object",
+            "Yes",
+            "The successful response for the Searched Subscriber Id ",
+            "--"
+        ]
+    },
+    "7.3.5": {
+        "paragraph": "When the user searched with subscriber id,The response we get the information about the subscriber id"
+    },
+    "7.4": {
+        "heading": "Response-ERROR-1"
+    },
+    "7.4.1": {
+        "paragraph": "When the user not provided the Subscriber Id,It is the response we get"
+    },
     "8": {
         "heading": "Function- terminate"
     },
@@ -2963,6 +3029,18 @@
             "--",
             "--"
         ]
+    },
+    "8.4": {
+        "heading": "Response-Success"
+    },
+    "8.4.1": {
+        "paragraph": "The response is true means the member is successfully terminated"
+    },
+    "8.5": {
+        "heading": "Response-ERROR-1"
+    },
+    "8.5.1": {
+        "paragraph": "Error response for not provided the reasoncode"
     },
     "9": {
         "heading": "Appendix"
